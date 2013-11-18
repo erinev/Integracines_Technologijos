@@ -8,20 +8,20 @@ namespace Serveris
     {
         private static void Main()
         {
-            var networkStreamUtility = new ServerUtility();
+            var serverUtility = new ServerUtility();
 
-            networkStreamUtility.StartServerSocket();
+            serverUtility.StartServerSocket();
             Console.WriteLine("Serveris paleistas. Laukiama klientu...");
 
             while (true)
             {
-                NetworkStream networkStream = networkStreamUtility.CreateNetworkStreamForServer();
+                NetworkStream networkStream = serverUtility.CreateNetworkStreamForServer();
 
-                byte[] resultBytes = networkStreamUtility.GetSumFromNetworkStream(networkStream);
+                byte[] resultBytes = serverUtility.CountSumFromNetworkStream(networkStream);
                 networkStream.Write(resultBytes, 0, 1);
 
                 networkStream.Close();
-                networkStreamUtility.CloseServerSocket();
+                serverUtility.CloseServerSocket();
             }
         }
     }

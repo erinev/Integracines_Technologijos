@@ -30,7 +30,7 @@ namespace Utility
             _serverSocket.Stop();
         }
 
-        public byte[] GetSumFromNetworkStream(NetworkStream networkStream)
+        public byte[] CountSumFromNetworkStream(NetworkStream networkStream)
         {
             networkStream.Read(ConfigsUtility.BufferSize, 0, 100);
             int firstNumber = BitConverter.ToInt16(ConfigsUtility.BufferSize, 0);
