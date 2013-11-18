@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klientas", "Klientas\Klientas.csproj", "{28EEE23E-3CD0-4E85-BDA2-44A0AC680BFF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klientas", "1_Laboras\Klientas\Klientas.csproj", "{28EEE23E-3CD0-4E85-BDA2-44A0AC680BFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serveris", "Serveris\Serveris.csproj", "{66B9FC67-B65C-4BBD-8F4A-72BC3F15B074}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiServeris", "1_Laboras\MultiServeris\MultiServeris.csproj", "{29984137-CB43-41E3-BD38-D0713E2B802E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiServeris", "MultiServeris\MultiServeris.csproj", "{29984137-CB43-41E3-BD38-D0713E2B802E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serveris", "1_Laboras\Serveris\Serveris.csproj", "{66B9FC67-B65C-4BBD-8F4A-72BC3F15B074}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1_Laboras", "1_Laboras", "{3FA41C12-44B2-4B45-A0C4-D6DB6E5B6C04}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,16 +19,21 @@ Global
 		{28EEE23E-3CD0-4E85-BDA2-44A0AC680BFF}.Debug|x86.Build.0 = Debug|x86
 		{28EEE23E-3CD0-4E85-BDA2-44A0AC680BFF}.Release|x86.ActiveCfg = Release|x86
 		{28EEE23E-3CD0-4E85-BDA2-44A0AC680BFF}.Release|x86.Build.0 = Release|x86
-		{66B9FC67-B65C-4BBD-8F4A-72BC3F15B074}.Debug|x86.ActiveCfg = Debug|x86
-		{66B9FC67-B65C-4BBD-8F4A-72BC3F15B074}.Debug|x86.Build.0 = Debug|x86
-		{66B9FC67-B65C-4BBD-8F4A-72BC3F15B074}.Release|x86.ActiveCfg = Release|x86
-		{66B9FC67-B65C-4BBD-8F4A-72BC3F15B074}.Release|x86.Build.0 = Release|x86
 		{29984137-CB43-41E3-BD38-D0713E2B802E}.Debug|x86.ActiveCfg = Debug|x86
 		{29984137-CB43-41E3-BD38-D0713E2B802E}.Debug|x86.Build.0 = Debug|x86
 		{29984137-CB43-41E3-BD38-D0713E2B802E}.Release|x86.ActiveCfg = Release|x86
 		{29984137-CB43-41E3-BD38-D0713E2B802E}.Release|x86.Build.0 = Release|x86
+		{66B9FC67-B65C-4BBD-8F4A-72BC3F15B074}.Debug|x86.ActiveCfg = Debug|x86
+		{66B9FC67-B65C-4BBD-8F4A-72BC3F15B074}.Debug|x86.Build.0 = Debug|x86
+		{66B9FC67-B65C-4BBD-8F4A-72BC3F15B074}.Release|x86.ActiveCfg = Release|x86
+		{66B9FC67-B65C-4BBD-8F4A-72BC3F15B074}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{28EEE23E-3CD0-4E85-BDA2-44A0AC680BFF} = {3FA41C12-44B2-4B45-A0C4-D6DB6E5B6C04}
+		{29984137-CB43-41E3-BD38-D0713E2B802E} = {3FA41C12-44B2-4B45-A0C4-D6DB6E5B6C04}
+		{66B9FC67-B65C-4BBD-8F4A-72BC3F15B074} = {3FA41C12-44B2-4B45-A0C4-D6DB6E5B6C04}
 	EndGlobalSection
 EndGlobal
