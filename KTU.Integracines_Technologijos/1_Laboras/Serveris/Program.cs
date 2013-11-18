@@ -8,7 +8,7 @@ namespace Serveris
     {
         private static void Main()
         {
-            var networkStreamUtility = new NetworkStreamUtility();
+            var networkStreamUtility = new ServerUtility();
 
             networkStreamUtility.StartServerSocket();
             Console.WriteLine("Serveris paleistas. Laukiama klientu...");

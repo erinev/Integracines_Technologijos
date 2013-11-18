@@ -7,22 +7,21 @@ namespace Klientas
     {
         private static void Main()
         {
-            var networkStreamUtility = new NetworkStreamUtility();
-            var inputStreamUtility = new InputStreamUtility();
+            var clientUtility = new ClientUtility();
 
             while (true)
             {
                 Console.WriteLine("Iveskite pirma skaiciu:");
                 string firstNumberInput = Console.ReadLine();
-                byte[] firstNumberBytes = inputStreamUtility.ProcessFirstNumber(firstNumberInput);
-                networkStreamUtility.WriteNumberToNetworkStream(firstNumberBytes);
+                byte[] firstNumberBytes = clientUtility.ProcessFirstNumber(firstNumberInput);
+                clientUtility.WriteNumberToNetworkStream(firstNumberBytes);
 
                 Console.WriteLine("Iveskite antra skaiciu:");
                 string secondNumberInput = Console.ReadLine();
-                byte[] secondNumberBytes = inputStreamUtility.ProcessSecondNumber(secondNumberInput);
-                networkStreamUtility.WriteNumberToNetworkStream(secondNumberBytes);
+                byte[] secondNumberBytes = clientUtility.ProcessSecondNumber(secondNumberInput);
+                clientUtility.WriteNumberToNetworkStream(secondNumberBytes);
 
-                int result = networkStreamUtility.GetResultFromNetworkStream();
+                int result = clientUtility.GetResultFromNetworkStream();
                 Console.WriteLine("Atsakymas:");
                 Console.WriteLine(result);
 
