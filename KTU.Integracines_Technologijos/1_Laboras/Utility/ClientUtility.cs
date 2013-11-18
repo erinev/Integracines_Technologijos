@@ -5,13 +5,6 @@ namespace Utility
 {
     public class ClientUtility
     {
-        private readonly NetworkStream _networkStream;
-
-        public ClientUtility()
-        {
-            _networkStream = CreateNetworkStreamForClient();
-        }
-
         public byte[] ProcessFirstNumber(string firstNumberInput)
         {
             int firstNumber = Convert.ToInt16(firstNumberInput, 10);
@@ -26,19 +19,19 @@ namespace Utility
             return secondNumberBytes;
         }
 
-        public int GetResultFromNetworkStream()
+        public int GetResultFromNetworkStream(NetworkStream networkStream)
         {
-            _networkStream.Read(ConstantsUtility.BufferSize, 0, 1);
+            networkStream.Read(ConstantsUtility.BufferSize, 0, 1);
             int result = BitConverter.ToInt16(ConstantsUtility.BufferSize, 0);
             return result;
         }
 
-        public void WriteNumberToNetworkStream(byte[] numberInBytes)
+        public void WriteNumberToNetworkStream(NetworkStream networkStream, byte[] numberInBytes)
         {
-            _networkStream.Write(numberInBytes, 0, 1);
+            networkStream.Write(numberInBytes, 0, 1);
         }
 
-        private NetworkStream CreateNetworkStreamForClient()
+        public NetworkStream CreateNetworkStreamForClient()
         {
             var clientSocket = new TcpClient(ConstantsUtility.ClientHostName, ConstantsUtility.PortNumber);
             NetworkStream networkStream = clientSocket.GetStream();

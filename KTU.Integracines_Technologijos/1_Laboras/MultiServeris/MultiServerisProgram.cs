@@ -21,5 +21,5 @@ namespace MultiServeris
                 multiClientHandler.StartClient(clientSocket);
             }
         }
-    } 
+    }
 }

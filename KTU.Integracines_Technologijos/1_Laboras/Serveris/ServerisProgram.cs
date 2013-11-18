@@ -18,7 +18,7 @@ namespace Serveris
                 NetworkStream networkStream = serverUtility.CreateNetworkStreamForServer();
 
                 byte[] resultBytes = serverUtility.CountSumFromNetworkStream(networkStream);
-                
+
                 networkStream.Write(resultBytes, 0, 1);
 
                 networkStream.Close();

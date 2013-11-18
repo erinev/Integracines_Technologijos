@@ -58,6 +58,7 @@ namespace Utility
 
         public TcpClient CreateClientSocket()
         {
+            _serverSocket.Start();
             TcpClient clientSocket = _serverSocket.AcceptTcpClient();
             return clientSocket;
         }
