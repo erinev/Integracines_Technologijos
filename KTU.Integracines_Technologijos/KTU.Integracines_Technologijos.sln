@@ -1,7 +1,25 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klientas", "Klientas\Klientas.csproj", "{28EEE23E-3CD0-4E85-BDA2-44A0AC680BFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serveris", "Serveris\Serveris.csproj", "{66B9FC67-B65C-4BBD-8F4A-72BC3F15B074}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28EEE23E-3CD0-4E85-BDA2-44A0AC680BFF}.Debug|x86.ActiveCfg = Debug|x86
+		{28EEE23E-3CD0-4E85-BDA2-44A0AC680BFF}.Debug|x86.Build.0 = Debug|x86
+		{28EEE23E-3CD0-4E85-BDA2-44A0AC680BFF}.Release|x86.ActiveCfg = Release|x86
+		{28EEE23E-3CD0-4E85-BDA2-44A0AC680BFF}.Release|x86.Build.0 = Release|x86
+		{66B9FC67-B65C-4BBD-8F4A-72BC3F15B074}.Debug|x86.ActiveCfg = Debug|x86
+		{66B9FC67-B65C-4BBD-8F4A-72BC3F15B074}.Debug|x86.Build.0 = Debug|x86
+		{66B9FC67-B65C-4BBD-8F4A-72BC3F15B074}.Release|x86.ActiveCfg = Release|x86
+		{66B9FC67-B65C-4BBD-8F4A-72BC3F15B074}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection

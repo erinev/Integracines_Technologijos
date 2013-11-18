@@ -3,21 +3,22 @@ using System.Net.Sockets;
 
 namespace Klientas
 {
-    internal class Program
+    internal static class Program
     {
         private static void Main()
         {
             while (true)
             {
                 var clientSocket = new TcpClient("localhost", 1000);
-                NetworkStream ns = clientSocket.GetStream(); // get stream
 
-                var buf = new byte[100]; // create byte array to receive data
+                NetworkStream ns = clientSocket.GetStream();
+
+                var buf = new byte[100];
 
                 Console.WriteLine("Iveskite pirma skaiciu");
-                string g = Console.ReadLine(); // read from console
-                int k1 = Convert.ToInt16(g, 10); // convert string to int        
-                byte[] bytes1 = BitConverter.GetBytes(k1); // convert int to byte array
+                string g = Console.ReadLine();
+                int k1 = Convert.ToInt16(g, 10);
+                byte[] bytes1 = BitConverter.GetBytes(k1);
                 ns.Write(bytes1, 0, 1); // write to stream
 
                 Console.WriteLine("Iveskite antra skaiciu");
@@ -36,6 +37,7 @@ namespace Klientas
 
                 Console.ReadLine();
             }
+// ReSharper disable once FunctionNeverReturns
         }
     }
 }
