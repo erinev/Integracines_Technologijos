@@ -10,7 +10,6 @@ namespace Klientas
             while (true)
             {
                 var clientSocket = new TcpClient("localhost", 1000);
-                    // connect to server running on localhost at port no. 1000
                 NetworkStream ns = clientSocket.GetStream(); // get stream
 
                 var buf = new byte[100]; // create byte array to receive data
