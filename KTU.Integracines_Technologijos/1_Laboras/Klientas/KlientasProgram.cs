@@ -1,5 +1,5 @@
 ﻿using System;
-using Klientas.Utility;
+using Utility;
 
 namespace Klientas
 {
