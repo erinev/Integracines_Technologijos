@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Klientas", "Klientas\Klient
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serveris", "Serveris\Serveris.csproj", "{66B9FC67-B65C-4BBD-8F4A-72BC3F15B074}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiServeris", "MultiServeris\MultiServeris.csproj", "{29984137-CB43-41E3-BD38-D0713E2B802E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -19,6 +21,10 @@ Global
 		{66B9FC67-B65C-4BBD-8F4A-72BC3F15B074}.Debug|x86.Build.0 = Debug|x86
 		{66B9FC67-B65C-4BBD-8F4A-72BC3F15B074}.Release|x86.ActiveCfg = Release|x86
 		{66B9FC67-B65C-4BBD-8F4A-72BC3F15B074}.Release|x86.Build.0 = Release|x86
+		{29984137-CB43-41E3-BD38-D0713E2B802E}.Debug|x86.ActiveCfg = Debug|x86
+		{29984137-CB43-41E3-BD38-D0713E2B802E}.Debug|x86.Build.0 = Debug|x86
+		{29984137-CB43-41E3-BD38-D0713E2B802E}.Release|x86.ActiveCfg = Release|x86
+		{29984137-CB43-41E3-BD38-D0713E2B802E}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
