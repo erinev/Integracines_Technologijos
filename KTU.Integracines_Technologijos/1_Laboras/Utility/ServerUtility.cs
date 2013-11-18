@@ -15,8 +15,8 @@ namespace Utility
 
         private TcpListener CreateServerSocket()
         {
-            IPAddress ip = IPAddress.Parse(ConfigsUtility.ServerIpAddress);
-            var serverSocket = new TcpListener(ip, ConfigsUtility.PortNumber);
+            IPAddress ip = IPAddress.Parse(ConstantsUtility.ServerIpAddress);
+            var serverSocket = new TcpListener(ip, ConstantsUtility.PortNumber);
             return serverSocket;
         }
 
@@ -32,11 +32,11 @@ namespace Utility
 
         public byte[] CountSumFromNetworkStream(NetworkStream networkStream)
         {
-            networkStream.Read(ConfigsUtility.BufferSize, 0, 100);
-            int firstNumber = BitConverter.ToInt16(ConfigsUtility.BufferSize, 0);
+            networkStream.Read(ConstantsUtility.BufferSize, 0, 100);
+            int firstNumber = BitConverter.ToInt16(ConstantsUtility.BufferSize, 0);
 
-            networkStream.Read(ConfigsUtility.BufferSize, 0, 100);
-            int secondNumber = BitConverter.ToInt16(ConfigsUtility.BufferSize, 0);
+            networkStream.Read(ConstantsUtility.BufferSize, 0, 100);
+            int secondNumber = BitConverter.ToInt16(ConstantsUtility.BufferSize, 0);
 
             int sum = firstNumber + secondNumber;
             byte[] result = BitConverter.GetBytes(sum);
@@ -44,11 +44,22 @@ namespace Utility
             return result;
         }
 
+        public void WriteSumToNetworkStream(NetworkStream networkStream, byte[] resultInBytes)
+        {
+            networkStream.Write(resultInBytes, 0, 1);
+        }
+
         public NetworkStream CreateNetworkStreamForServer()
         {
-            TcpClient clientSocket = _serverSocket.AcceptTcpClient();
+            TcpClient clientSocket = CreateClientSocket();
             NetworkStream networkStream = clientSocket.GetStream();
             return networkStream;
+        }
+
+        public TcpClient CreateClientSocket()
+        {
+            TcpClient clientSocket = _serverSocket.AcceptTcpClient();
+            return clientSocket;
         }
     }
 }

@@ -36,7 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientUtility.cs" />
-    <Compile Include="ConfigsUtility.cs" />
+    <Compile Include="ConstantsUtility.cs" />
     <Compile Include="ServerUtility.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

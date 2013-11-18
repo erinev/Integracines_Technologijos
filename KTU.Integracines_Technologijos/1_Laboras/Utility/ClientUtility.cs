@@ -28,8 +28,8 @@ namespace Utility
 
         public int GetResultFromNetworkStream()
         {
-            _networkStream.Read(ConfigsUtility.BufferSize, 0, 1);
-            int result = BitConverter.ToInt16(ConfigsUtility.BufferSize, 0);
+            _networkStream.Read(ConstantsUtility.BufferSize, 0, 1);
+            int result = BitConverter.ToInt16(ConstantsUtility.BufferSize, 0);
             return result;
         }
 
@@ -40,7 +40,7 @@ namespace Utility
 
         private NetworkStream CreateNetworkStreamForClient()
         {
-            var clientSocket = new TcpClient(ConfigsUtility.ClientHostName, ConfigsUtility.PortNumber);
+            var clientSocket = new TcpClient(ConstantsUtility.ClientHostName, ConstantsUtility.PortNumber);
             NetworkStream networkStream = clientSocket.GetStream();
             return networkStream;
         }

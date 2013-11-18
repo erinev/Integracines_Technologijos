@@ -1,6 +1,6 @@
 ﻿namespace Utility
 {
-    public static class ConfigsUtility
+    public static class ConstantsUtility
     {
         public const string ClientHostName = "localhost";
         public const string ServerIpAddress = "127.0.0.1";
