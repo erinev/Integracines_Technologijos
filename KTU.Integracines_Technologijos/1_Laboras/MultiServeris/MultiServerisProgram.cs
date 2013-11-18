@@ -11,7 +11,7 @@ namespace MultiServeris
             var serverUtility = new ServerUtility();
 
             serverUtility.StartServerSocket();
-            Console.WriteLine("Serveris paleistas. Laukiama klientu...");
+            Console.WriteLine("Multi klientu serveris paleistas. Laukiama klientu...");
 
             while (true)
             {

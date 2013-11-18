@@ -11,7 +11,7 @@ namespace Serveris
             var serverUtility = new ServerUtility();
 
             serverUtility.StartServerSocket();
-            Console.WriteLine("Serveris paleistas. Laukiama klientu...");
+            Console.WriteLine("Vieno kliento serveris paleistas. Laukiama klientu...");
 
             while (true)
             {
