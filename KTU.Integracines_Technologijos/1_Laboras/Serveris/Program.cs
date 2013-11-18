@@ -33,7 +33,6 @@ namespace Serveris
                 ns.Close();
                 clientSocket.Close();
             }
-// ReSharper disable once FunctionNeverReturns
         }
     }
 }
