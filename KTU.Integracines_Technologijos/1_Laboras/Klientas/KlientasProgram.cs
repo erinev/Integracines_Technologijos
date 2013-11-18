@@ -3,7 +3,7 @@ using Klientas.Utility;
 
 namespace Klientas
 {
-    internal static class Program
+    internal static class KlientasProgram
     {
         private static void Main()
         {
