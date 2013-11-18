@@ -4,7 +4,7 @@ using Utility;
 
 namespace Serveris
 {
-    internal static class Program
+    internal static class ServerisProgram
     {
         private static void Main()
         {
