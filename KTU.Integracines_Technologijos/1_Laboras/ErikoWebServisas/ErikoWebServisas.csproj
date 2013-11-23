@@ -44,6 +44,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\Integracines_Technologijos.mdf" />
+    <Content Include="App_Data\Integracines_Technologijos_log.ldf">
+      <DependentUpon>Integracines_Technologijos.mdf</DependentUpon>
+    </Content>
     <Content Include="ManoWebServisas.asmx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -65,9 +69,7 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Duomenis.xsc">
       <DependentUpon>Duomenis.xsd</DependentUpon>

@@ -9,9 +9,11 @@ namespace ErikoWebServisas
     public class ManoWebServisas : WebService
     {
         [WebMethod]
-        public string HelloWorld()
+        public string GautiPavadinimaPagalKoda(string kodas)
         {
-            return "Hello World";
+            var tableAdapter = new PaskaitosTableAdapter();
+            string pavadinimas = tableAdapter.GautiPavadinimaPagalKoda(kodas);
+            return pavadinimas;
         }
     }
 }
