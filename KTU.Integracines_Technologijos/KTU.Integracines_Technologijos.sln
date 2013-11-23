@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Socket", "Socket", "{E4D8C3
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebService", "WebService", "{62668087-B038-4B35-9232-DFC2C9D6D3E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErikoWebServisas", "1_Laboras\ErikoWebServisas\ErikoWebServisas.csproj", "{47E82C5E-BA95-4B42-9666-09C2E19AF0E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,16 @@ Global
 		{673F8CE0-29AE-49E8-946E-DC6E3509ABF2}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{673F8CE0-29AE-49E8-946E-DC6E3509ABF2}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{673F8CE0-29AE-49E8-946E-DC6E3509ABF2}.Release|x86.ActiveCfg = Release|Any CPU
+		{47E82C5E-BA95-4B42-9666-09C2E19AF0E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47E82C5E-BA95-4B42-9666-09C2E19AF0E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47E82C5E-BA95-4B42-9666-09C2E19AF0E3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{47E82C5E-BA95-4B42-9666-09C2E19AF0E3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{47E82C5E-BA95-4B42-9666-09C2E19AF0E3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{47E82C5E-BA95-4B42-9666-09C2E19AF0E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47E82C5E-BA95-4B42-9666-09C2E19AF0E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47E82C5E-BA95-4B42-9666-09C2E19AF0E3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{47E82C5E-BA95-4B42-9666-09C2E19AF0E3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{47E82C5E-BA95-4B42-9666-09C2E19AF0E3}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,5 +88,6 @@ Global
 		{28EEE23E-3CD0-4E85-BDA2-44A0AC680BFF} = {E4D8C3D1-FE1A-4A77-B45D-63BB28983A1D}
 		{673F8CE0-29AE-49E8-946E-DC6E3509ABF2} = {E4D8C3D1-FE1A-4A77-B45D-63BB28983A1D}
 		{29984137-CB43-41E3-BD38-D0713E2B802E} = {E4D8C3D1-FE1A-4A77-B45D-63BB28983A1D}
+		{47E82C5E-BA95-4B42-9666-09C2E19AF0E3} = {62668087-B038-4B35-9232-DFC2C9D6D3E5}
 	EndGlobalSection
 EndGlobal
