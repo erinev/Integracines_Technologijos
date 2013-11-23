@@ -3,7 +3,7 @@ using System.Web.Services;
 
 namespace ErikoWebServisas
 {
-    [WebService(Namespace = "http://tempuri.org/")]
+    [WebService(Namespace = "http://ktu.lt/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [ToolboxItem(false)]
     public class ManoWebServisas : WebService
