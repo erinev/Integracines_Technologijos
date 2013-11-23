@@ -282,6 +282,8 @@ namespace ErikoWebServisas
             
             private global::System.Data.DataColumn columnPavadinimas;
             
+            private global::System.Data.DataColumn columnLaikas;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public PaskaitosDataTable() {
@@ -333,6 +335,14 @@ namespace ErikoWebServisas
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LaikasColumn {
+                get {
+                    return this.columnLaikas;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -368,11 +378,12 @@ namespace ErikoWebServisas
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PaskaitosRow AddPaskaitosRow(string kodas, string Pavadinimas) {
+            public PaskaitosRow AddPaskaitosRow(string kodas, string Pavadinimas, System.DateTime Laikas) {
                 PaskaitosRow rowPaskaitosRow = ((PaskaitosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                     kodas,
-                    Pavadinimas};
+                    Pavadinimas,
+                    Laikas};
                 rowPaskaitosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPaskaitosRow);
                 return rowPaskaitosRow;
@@ -404,6 +415,7 @@ namespace ErikoWebServisas
             internal void InitVars() {
                 this.columnkodas = base.Columns["kodas"];
                 this.columnPavadinimas = base.Columns["Pavadinimas"];
+                this.columnLaikas = base.Columns["Laikas"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -413,6 +425,8 @@ namespace ErikoWebServisas
                 base.Columns.Add(this.columnkodas);
                 this.columnPavadinimas = new global::System.Data.DataColumn("Pavadinimas", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPavadinimas);
+                this.columnLaikas = new global::System.Data.DataColumn("Laikas", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLaikas);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                     this.columnkodas}, true));
                 this.columnkodas.AllowDBNull = false;
@@ -420,6 +434,7 @@ namespace ErikoWebServisas
                 this.columnkodas.MaxLength = 10;
                 this.columnPavadinimas.AllowDBNull = false;
                 this.columnPavadinimas.MaxLength = 50;
+                this.columnLaikas.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -579,6 +594,17 @@ namespace ErikoWebServisas
                 }
                 set {
                     this[this.tablePaskaitos.PavadinimasColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime Laikas {
+                get {
+                    return ((global::System.DateTime)(this[this.tablePaskaitos.LaikasColumn]));
+                }
+                set {
+                    this[this.tablePaskaitos.LaikasColumn] = value;
                 }
             }
         }
@@ -741,6 +767,7 @@ namespace ErikoWebServisas
             tableMapping.DataSetTable = "Paskaitos";
             tableMapping.ColumnMappings.Add("kodas", "kodas");
             tableMapping.ColumnMappings.Add("Pavadinimas", "Pavadinimas");
+            tableMapping.ColumnMappings.Add("Laikas", "Laikas");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -749,18 +776,20 @@ namespace ErikoWebServisas
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_kodas", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kodas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Paskaitos] ([kodas], [Pavadinimas]) VALUES (@kodas, @Pavadinim" +
-                                                      "as)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Paskaitos] ([kodas], [Pavadinimas], [Laikas]) VALUES (@kodas, " +
+                                                      "@Pavadinimas, @Laikas)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kodas", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kodas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pavadinimas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pavadinimas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Laikas", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Laikas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Paskaitos] SET [kodas] = @kodas, [Pavadinimas] = @Pavadinimas WHERE" +
-                                                      " (([kodas] = @Original_kodas))";
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Paskaitos] SET [kodas] = @kodas, [Pavadinimas] = @Pavadinimas, [Lai" +
+                                                      "kas] = @Laikas WHERE (([kodas] = @Original_kodas))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kodas", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kodas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pavadinimas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pavadinimas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Laikas", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Laikas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_kodas", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kodas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
@@ -774,16 +803,39 @@ namespace ErikoWebServisas
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT kodas, Pavadinimas FROM dbo.Paskaitos";
+            this._commandCollection[0].CommandText = "SELECT kodas, Pavadinimas, Laikas FROM dbo.Paskaitos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT Pavadinimas FROM Paskaitos WHERE (kodas = @kodas)";
+            this._commandCollection[1].CommandText = "UPDATE       Paskaitos\r\nSET                Pavadinimas = @Pavadinimas, Laikas = @" +
+                                                     "Laikas, kodas = @naujasKodas\r\nWHERE        (kodas = @dabartinisKodas)";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kodas", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "kodas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pavadinimas", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Pavadinimas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Laikas", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Laikas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@naujasKodas", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "kodas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dabartinisKodas", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "kodas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        Pavadinimas\r\nFROM            Paskaitos\r\nWHERE        (Laikas = @lai" +
+                                                     "kas)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@laikas", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Laikas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "INSERT INTO Paskaitos\r\n                         (kodas, Pavadinimas, Laikas)\r\nVAL" +
+                                                     "UES        (@kodas,@Pavadinimas,@Laikas);";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kodas", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "kodas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pavadinimas", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Pavadinimas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Laikas", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Laikas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "DELETE FROM [dbo].[Paskaitos] WHERE (([kodas] = @kodas))";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kodas", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "kodas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -870,7 +922,7 @@ namespace ErikoWebServisas
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string kodas, string Pavadinimas) {
+        public virtual int Insert(string kodas, string Pavadinimas, System.DateTime Laikas) {
             if ((kodas == null)) {
                 throw new global::System.ArgumentNullException("kodas");
             }
@@ -883,6 +935,7 @@ namespace ErikoWebServisas
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Pavadinimas));
             }
+            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(Laikas));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                  != global::System.Data.ConnectionState.Open)) {
@@ -903,7 +956,7 @@ namespace ErikoWebServisas
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string kodas, string Pavadinimas, string Original_kodas) {
+        public virtual int Update(string kodas, string Pavadinimas, System.DateTime Laikas, string Original_kodas) {
             if ((kodas == null)) {
                 throw new global::System.ArgumentNullException("kodas");
             }
@@ -916,11 +969,12 @@ namespace ErikoWebServisas
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Pavadinimas));
             }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(Laikas));
             if ((Original_kodas == null)) {
                 throw new global::System.ArgumentNullException("Original_kodas");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_kodas));
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Original_kodas));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -942,21 +996,58 @@ namespace ErikoWebServisas
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Pavadinimas, string Original_kodas) {
-            return this.Update(Original_kodas, Pavadinimas, Original_kodas);
+        public virtual int Update(string Pavadinimas, System.DateTime Laikas, string Original_kodas) {
+            return this.Update(Original_kodas, Pavadinimas, Laikas, Original_kodas);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual string GautiPavadinimaPagalKoda(string kodas) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int AtnaujintiPaskaitaPagalKoda(string Pavadinimas, System.DateTime Laikas, string naujasKodas, string dabartinisKodas) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            if ((kodas == null)) {
-                throw new global::System.ArgumentNullException("kodas");
+            if ((Pavadinimas == null)) {
+                throw new global::System.ArgumentNullException("Pavadinimas");
             }
             else {
-                command.Parameters[0].Value = ((string)(kodas));
+                command.Parameters[0].Value = ((string)(Pavadinimas));
             }
+            command.Parameters[1].Value = ((System.DateTime)(Laikas));
+            if ((naujasKodas == null)) {
+                throw new global::System.ArgumentNullException("naujasKodas");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(naujasKodas));
+            }
+            if ((dabartinisKodas == null)) {
+                throw new global::System.ArgumentNullException("dabartinisKodas");
+            }
+            else {
+                command.Parameters[3].Value = ((string)(dabartinisKodas));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                 != global::System.Data.ConnectionState.Open)) {
+                     command.Connection.Open();
+                 }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object GautiPaskaitaPagalLaika(System.DateTime laikas) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            command.Parameters[0].Value = ((System.DateTime)(laikas));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                  != global::System.Data.ConnectionState.Open)) {
@@ -976,8 +1067,73 @@ namespace ErikoWebServisas
                      return null;
                  }
             else {
-                return ((string)(returnValue));
+                return ((object)(returnValue));
             }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int IrasytiNaujaPaskaita(string kodas, string Pavadinimas, System.DateTime Laikas) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((kodas == null)) {
+                throw new global::System.ArgumentNullException("kodas");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(kodas));
+            }
+            if ((Pavadinimas == null)) {
+                throw new global::System.ArgumentNullException("Pavadinimas");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(Pavadinimas));
+            }
+            command.Parameters[2].Value = ((System.DateTime)(Laikas));
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                 != global::System.Data.ConnectionState.Open)) {
+                     command.Connection.Open();
+                 }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int IstrintiPaskaitaPagalKoda(string kodas) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
+            if ((kodas == null)) {
+                throw new global::System.ArgumentNullException("kodas");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(kodas));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                 != global::System.Data.ConnectionState.Open)) {
+                     command.Connection.Open();
+                 }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

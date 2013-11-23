@@ -8,8 +8,7 @@ namespace WebServisoKlientas
         private static void Main()
         {
             var klientas = new ManoWebServisasSoapClient();
-
-            klientas.HelloWorld();
+            
             Console.ReadLine();
         }
     }
