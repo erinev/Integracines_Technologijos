@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net.Sockets;
 using Utility;
 
@@ -13,22 +14,22 @@ namespace Klientas
             while (true)
             {
                 NetworkStream networkStream = clientUtility.CreateNetworkStreamForClient();
+                var streamWriter = new StreamWriter(networkStream);
+                var streamReader = new StreamReader(networkStream);
 
-                Console.WriteLine("Iveskite pirma skaiciu:");
-                string firstNumberInput = Console.ReadLine();
-                byte[] firstNumberBytes = clientUtility.ProcessFirstNumber(firstNumberInput);
-                clientUtility.WriteNumberToNetworkStream(networkStream, firstNumberBytes);
+                Console.WriteLine("Nauja žinutė:");
+                string messageInput = Console.ReadLine();
+                streamWriter.WriteLine(messageInput);
+                streamWriter.Flush();
 
-                Console.WriteLine("Iveskite antra skaiciu:");
-                string secondNumberInput = Console.ReadLine();
-                byte[] secondNumberBytes = clientUtility.ProcessSecondNumber(secondNumberInput);
-                clientUtility.WriteNumberToNetworkStream(networkStream, secondNumberBytes);
+                Console.WriteLine("Gautas atsakymas:");
+                string gautaZinute = streamReader.ReadLine();
+                Console.WriteLine(gautaZinute);
+                Console.WriteLine();
 
-                int result = clientUtility.GetResultFromNetworkStream(networkStream);
-                Console.WriteLine("Atsakymas:");
-                Console.WriteLine(result);
-
-                Console.ReadLine();
+                streamReader.Close();
+                streamWriter.Close();
+                networkStream.Close();
             }
         }
     }
