@@ -17,11 +17,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebService", "WebService", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErikoWebServisas", "1_Laboras\ErikoWebServisas\ErikoWebServisas.csproj", "{47E82C5E-BA95-4B42-9666-09C2E19AF0E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServisoKlientas", "1_Laboras\WebServisoKlientas\WebServisoKlientas.csproj", "{13C13253-3A86-498B-A97E-7D882EB10FC9}"
-	ProjectSection(ProjectDependencies) = postProject
-		{47E82C5E-BA95-4B42-9666-09C2E19AF0E3} = {47E82C5E-BA95-4B42-9666-09C2E19AF0E3}
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -82,16 +77,6 @@ Global
 		{47E82C5E-BA95-4B42-9666-09C2E19AF0E3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{47E82C5E-BA95-4B42-9666-09C2E19AF0E3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{47E82C5E-BA95-4B42-9666-09C2E19AF0E3}.Release|x86.ActiveCfg = Release|Any CPU
-		{13C13253-3A86-498B-A97E-7D882EB10FC9}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{13C13253-3A86-498B-A97E-7D882EB10FC9}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{13C13253-3A86-498B-A97E-7D882EB10FC9}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{13C13253-3A86-498B-A97E-7D882EB10FC9}.Debug|x86.ActiveCfg = Debug|x86
-		{13C13253-3A86-498B-A97E-7D882EB10FC9}.Debug|x86.Build.0 = Debug|x86
-		{13C13253-3A86-498B-A97E-7D882EB10FC9}.Release|Any CPU.ActiveCfg = Release|x86
-		{13C13253-3A86-498B-A97E-7D882EB10FC9}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{13C13253-3A86-498B-A97E-7D882EB10FC9}.Release|Mixed Platforms.Build.0 = Release|x86
-		{13C13253-3A86-498B-A97E-7D882EB10FC9}.Release|x86.ActiveCfg = Release|x86
-		{13C13253-3A86-498B-A97E-7D882EB10FC9}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -104,6 +89,5 @@ Global
 		{673F8CE0-29AE-49E8-946E-DC6E3509ABF2} = {E4D8C3D1-FE1A-4A77-B45D-63BB28983A1D}
 		{29984137-CB43-41E3-BD38-D0713E2B802E} = {E4D8C3D1-FE1A-4A77-B45D-63BB28983A1D}
 		{47E82C5E-BA95-4B42-9666-09C2E19AF0E3} = {62668087-B038-4B35-9232-DFC2C9D6D3E5}
-		{13C13253-3A86-498B-A97E-7D882EB10FC9} = {62668087-B038-4B35-9232-DFC2C9D6D3E5}
 	EndGlobalSection
 EndGlobal
