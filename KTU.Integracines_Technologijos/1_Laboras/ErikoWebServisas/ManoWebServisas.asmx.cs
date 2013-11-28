@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Web.Services;
+using ErikoWebServisas.DuomenisTableAdapters;
 
 namespace ErikoWebServisas
 {
@@ -21,15 +22,17 @@ namespace ErikoWebServisas
         public string GautiPaskaitaPagalLaika(DateTime laikas)
         {
             var tableAdapter = new PaskaitosTableAdapter();
-            var pavadinimas = (string)tableAdapter.GautiPaskaitaPagalLaika(laikas);
+            var pavadinimas = (string) tableAdapter.GautiPaskaitaPagalLaika(laikas);
             return pavadinimas;
         }
 
         [WebMethod]
-        public int AtnaujintiPaskaitaPagalKoda(string naujasPavadinimas, DateTime naujasLaikas, string naujasKodas, string dabartinisKodas)
+        public int AtnaujintiPaskaitaPagalKoda(string naujasPavadinimas, DateTime naujasLaikas, string naujasKodas,
+            string dabartinisKodas)
         {
             var tableAdapter = new PaskaitosTableAdapter();
-            int rowUpdated = tableAdapter.AtnaujintiPaskaitaPagalKoda(naujasPavadinimas, naujasLaikas, naujasKodas, dabartinisKodas);
+            int rowUpdated = tableAdapter.AtnaujintiPaskaitaPagalKoda(naujasPavadinimas, naujasLaikas, naujasKodas,
+                dabartinisKodas);
             return rowUpdated;
         }
 

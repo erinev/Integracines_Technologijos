@@ -8,10 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ErikoWebServisas
-{
 #pragma warning disable 1591
 
+namespace ErikoWebServisas {
+    
+    
     /// <summary>
     ///Represents a strongly typed in-memory cache of data.
     ///</summary>
@@ -41,7 +42,7 @@ namespace ErikoWebServisas
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         protected Duomenis(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-            base(info, context, false) {
+                base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
                 global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler1 = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -72,7 +73,7 @@ namespace ErikoWebServisas
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
             base.Tables.CollectionChanged += schemaChangedHandler;
             this.Relations.CollectionChanged += schemaChangedHandler;
-            }
+        }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -246,9 +247,9 @@ namespace ErikoWebServisas
                             s1.Position = 0;
                             s2.Position = 0;
                             for (; ((s1.Position != s1.Length) 
-                                    && (s1.ReadByte() == s2.ReadByte())); ) {
-                                        ;
-                                    }
+                                        && (s1.ReadByte() == s2.ReadByte())); ) {
+                                ;
+                            }
                             if ((s1.Position == s1.Length)) {
                                 return type;
                             }
@@ -313,9 +314,9 @@ namespace ErikoWebServisas
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected PaskaitosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                base(info, context) {
+                    base(info, context) {
                 this.InitVars();
-                }
+            }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -381,9 +382,9 @@ namespace ErikoWebServisas
             public PaskaitosRow AddPaskaitosRow(string kodas, string Pavadinimas, System.DateTime Laikas) {
                 PaskaitosRow rowPaskaitosRow = ((PaskaitosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                    kodas,
-                    Pavadinimas,
-                    Laikas};
+                        kodas,
+                        Pavadinimas,
+                        Laikas};
                 rowPaskaitosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPaskaitosRow);
                 return rowPaskaitosRow;
@@ -393,7 +394,7 @@ namespace ErikoWebServisas
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public PaskaitosRow FindBykodas(string kodas) {
                 return ((PaskaitosRow)(this.Rows.Find(new object[] {
-                    kodas})));
+                            kodas})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -428,7 +429,7 @@ namespace ErikoWebServisas
                 this.columnLaikas = new global::System.Data.DataColumn("Laikas", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLaikas);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                    this.columnkodas}, true));
+                                this.columnkodas}, true));
                 this.columnkodas.AllowDBNull = false;
                 this.columnkodas.Unique = true;
                 this.columnkodas.MaxLength = 10;
@@ -538,9 +539,9 @@ namespace ErikoWebServisas
                                 s1.Position = 0;
                                 s2.Position = 0;
                                 for (; ((s1.Position != s1.Length) 
-                                        && (s1.ReadByte() == s2.ReadByte())); ) {
-                                            ;
-                                        }
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
                                 if ((s1.Position == s1.Length)) {
                                     return type;
                                 }
@@ -571,9 +572,9 @@ namespace ErikoWebServisas
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal PaskaitosRow(global::System.Data.DataRowBuilder rb) : 
-                base(rb) {
+                    base(rb) {
                 this.tablePaskaitos = ((PaskaitosDataTable)(this.Table));
-                }
+            }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -643,7 +644,10 @@ namespace ErikoWebServisas
             }
         }
     }
-
+}
+namespace ErikoWebServisas.DuomenisTableAdapters {
+    
+    
     /// <summary>
     ///Represents the connection and commands used to retrieve and save data.
     ///</summary>
@@ -651,7 +655,7 @@ namespace ErikoWebServisas
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.ComponentModel.DataObjectAttribute(true)]
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-                                                     ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class PaskaitosTableAdapter : global::System.ComponentModel.Component {
         
@@ -722,17 +726,17 @@ namespace ErikoWebServisas
                     this.CommandCollection[i].Transaction = this._transaction;
                 }
                 if (((this.Adapter != null) 
-                     && (this.Adapter.DeleteCommand != null))) {
-                         this.Adapter.DeleteCommand.Transaction = this._transaction;
-                     }
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
                 if (((this.Adapter != null) 
-                     && (this.Adapter.InsertCommand != null))) {
-                         this.Adapter.InsertCommand.Transaction = this._transaction;
-                     }
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
                 if (((this.Adapter != null) 
-                     && (this.Adapter.UpdateCommand != null))) {
-                         this.Adapter.UpdateCommand.Transaction = this._transaction;
-                     }
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
             }
         }
         
@@ -777,7 +781,7 @@ namespace ErikoWebServisas
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Paskaitos] ([kodas], [Pavadinimas], [Laikas]) VALUES (@kodas, " +
-                                                      "@Pavadinimas, @Laikas)";
+                "@Pavadinimas, @Laikas)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kodas", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kodas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pavadinimas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pavadinimas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -785,7 +789,7 @@ namespace ErikoWebServisas
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Paskaitos] SET [kodas] = @kodas, [Pavadinimas] = @Pavadinimas, [Lai" +
-                                                      "kas] = @Laikas WHERE (([kodas] = @Original_kodas))";
+                "kas] = @Laikas WHERE (([kodas] = @Original_kodas))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kodas", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kodas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pavadinimas", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pavadinimas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -810,8 +814,9 @@ namespace ErikoWebServisas
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "UPDATE       Paskaitos\r\nSET                Pavadinimas = @Pavadinimas, Laikas = @" +
-                                                     "Laikas, kodas = @naujasKodas\r\nWHERE        (kodas = @dabartinisKodas)";
+            this._commandCollection[1].CommandText = "\r\n                      UPDATE       Paskaitos\r\n                      SET        " +
+                "        Pavadinimas = @Pavadinimas, Laikas = @Laikas, kodas = @naujasKodas\r\n    " +
+                "                  WHERE        (kodas = @dabartinisKodas)\r\n                    ";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pavadinimas", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Pavadinimas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Laikas", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Laikas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -819,14 +824,16 @@ namespace ErikoWebServisas
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@dabartinisKodas", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "kodas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        Pavadinimas\r\nFROM            Paskaitos\r\nWHERE        (Laikas = @lai" +
-                                                     "kas)";
+            this._commandCollection[2].CommandText = "\r\n                      SELECT        Pavadinimas\r\n                      FROM    " +
+                "        Paskaitos\r\n                      WHERE        (Laikas = @laikas)\r\n      " +
+                "              ";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@laikas", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "Laikas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "INSERT INTO Paskaitos\r\n                         (kodas, Pavadinimas, Laikas)\r\nVAL" +
-                                                     "UES        (@kodas,@Pavadinimas,@Laikas);";
+            this._commandCollection[3].CommandText = "\r\n                      INSERT INTO Paskaitos\r\n                      (kodas, Pava" +
+                "dinimas, Laikas)\r\n                      VALUES        (@kodas,@Pavadinimas,@Laik" +
+                "as);\r\n                    ";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kodas", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "kodas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pavadinimas", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Pavadinimas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -881,7 +888,7 @@ namespace ErikoWebServisas
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(global::System.Data.DataRow dataRow) {
             return this.Adapter.Update(new global::System.Data.DataRow[] {
-                dataRow});
+                        dataRow});
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -904,9 +911,9 @@ namespace ErikoWebServisas
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                 != global::System.Data.ConnectionState.Open)) {
-                     this.Adapter.DeleteCommand.Connection.Open();
-                 }
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
             try {
                 int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
                 return returnValue;
@@ -938,9 +945,9 @@ namespace ErikoWebServisas
             this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(Laikas));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                 != global::System.Data.ConnectionState.Open)) {
-                     this.Adapter.InsertCommand.Connection.Open();
-                 }
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
             try {
                 int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
                 return returnValue;
@@ -978,9 +985,9 @@ namespace ErikoWebServisas
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                 != global::System.Data.ConnectionState.Open)) {
-                     this.Adapter.UpdateCommand.Connection.Open();
-                 }
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
             try {
                 int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
                 return returnValue;
@@ -1027,9 +1034,9 @@ namespace ErikoWebServisas
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                 != global::System.Data.ConnectionState.Open)) {
-                     command.Connection.Open();
-                 }
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
             int returnValue;
             try {
                 returnValue = command.ExecuteNonQuery();
@@ -1050,9 +1057,9 @@ namespace ErikoWebServisas
             command.Parameters[0].Value = ((System.DateTime)(laikas));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                 != global::System.Data.ConnectionState.Open)) {
-                     command.Connection.Open();
-                 }
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
             object returnValue;
             try {
                 returnValue = command.ExecuteScalar();
@@ -1063,9 +1070,9 @@ namespace ErikoWebServisas
                 }
             }
             if (((returnValue == null) 
-                 || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                     return null;
-                 }
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
             else {
                 return ((object)(returnValue));
             }
@@ -1092,9 +1099,9 @@ namespace ErikoWebServisas
             command.Parameters[2].Value = ((System.DateTime)(Laikas));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                 != global::System.Data.ConnectionState.Open)) {
-                     command.Connection.Open();
-                 }
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
             int returnValue;
             try {
                 returnValue = command.ExecuteNonQuery();
@@ -1121,9 +1128,9 @@ namespace ErikoWebServisas
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                 != global::System.Data.ConnectionState.Open)) {
-                     command.Connection.Open();
-                 }
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
             int returnValue;
             try {
                 returnValue = command.ExecuteNonQuery();
@@ -1143,7 +1150,7 @@ namespace ErikoWebServisas
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerDesigner, Microsoft.VSD" +
-                                                     "esigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+        "esigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapterManager")]
     public partial class TableAdapterManager : global::System.ComponentModel.Component {
         
@@ -1169,8 +1176,8 @@ namespace ErikoWebServisas
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-                                                       "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-                                                       "a", "System.Drawing.Design.UITypeEditor")]
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
         public PaskaitosTableAdapter PaskaitosTableAdapter {
             get {
                 return this._paskaitosTableAdapter;
@@ -1200,9 +1207,9 @@ namespace ErikoWebServisas
                     return this._connection;
                 }
                 if (((this._paskaitosTableAdapter != null) 
-                     && (this._paskaitosTableAdapter.Connection != null))) {
-                         return this._paskaitosTableAdapter.Connection;
-                     }
+                            && (this._paskaitosTableAdapter.Connection != null))) {
+                    return this._paskaitosTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -1234,10 +1241,10 @@ namespace ErikoWebServisas
                 global::System.Data.DataRow[] updatedRows = dataSet.Paskaitos.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
-                     && (0 < updatedRows.Length))) {
-                         result = (result + this._paskaitosTableAdapter.Update(updatedRows));
-                         allChangedRows.AddRange(updatedRows);
-                     }
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._paskaitosTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
             }
             return result;
         }
@@ -1252,10 +1259,10 @@ namespace ErikoWebServisas
             if ((this._paskaitosTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Paskaitos.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
-                     && (0 < addedRows.Length))) {
-                         result = (result + this._paskaitosTableAdapter.Update(addedRows));
-                         allAddedRows.AddRange(addedRows);
-                     }
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._paskaitosTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
             }
             return result;
         }
@@ -1270,10 +1277,10 @@ namespace ErikoWebServisas
             if ((this._paskaitosTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Paskaitos.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
-                     && (0 < deletedRows.Length))) {
-                         result = (result + this._paskaitosTableAdapter.Update(deletedRows));
-                         allChangedRows.AddRange(deletedRows);
-                     }
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._paskaitosTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
             }
             return result;
         }
@@ -1285,13 +1292,13 @@ namespace ErikoWebServisas
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private global::System.Data.DataRow[] GetRealUpdatedRows(global::System.Data.DataRow[] updatedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             if (((updatedRows == null) 
-                 || (updatedRows.Length < 1))) {
-                     return updatedRows;
-                 }
+                        || (updatedRows.Length < 1))) {
+                return updatedRows;
+            }
             if (((allAddedRows == null) 
-                 || (allAddedRows.Count < 1))) {
-                     return updatedRows;
-                 }
+                        || (allAddedRows.Count < 1))) {
+                return updatedRows;
+            }
             global::System.Collections.Generic.List<global::System.Data.DataRow> realUpdatedRows = new global::System.Collections.Generic.List<global::System.Data.DataRow>();
             for (int i = 0; (i < updatedRows.Length); i = (i + 1)) {
                 global::System.Data.DataRow row = updatedRows[i];
@@ -1315,20 +1322,20 @@ namespace ErikoWebServisas
                 return 0;
             }
             if (((this._paskaitosTableAdapter != null) 
-                 && (this.MatchTableAdapterConnection(this._paskaitosTableAdapter.Connection) == false))) {
-                     throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                                                                "tring.");
-                 }
+                        && (this.MatchTableAdapterConnection(this._paskaitosTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
-                                                              "ger TableAdapter property to a valid TableAdapter instance.");
+                        "ger TableAdapter property to a valid TableAdapter instance.");
             }
             bool workConnOpened = false;
             if (((workConnection.State & global::System.Data.ConnectionState.Broken) 
-                 == global::System.Data.ConnectionState.Broken)) {
-                     workConnection.Close();
-                 }
+                        == global::System.Data.ConnectionState.Broken)) {
+                workConnection.Close();
+            }
             if ((workConnection.State == global::System.Data.ConnectionState.Closed)) {
                 workConnection.Open();
                 workConnOpened = true;
@@ -1336,7 +1343,7 @@ namespace ErikoWebServisas
             global::System.Data.IDbTransaction workTransaction = workConnection.BeginTransaction();
             if ((workTransaction == null)) {
                 throw new global::System.ApplicationException("The transaction cannot begin. The current data connection does not support transa" +
-                                                              "ctions or the current state is not allowing the transaction to begin.");
+                        "ctions or the current state is not allowing the transaction to begin.");
             }
             global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows = new global::System.Collections.Generic.List<global::System.Data.DataRow>();
             global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows = new global::System.Collections.Generic.List<global::System.Data.DataRow>();
@@ -1447,9 +1454,9 @@ namespace ErikoWebServisas
                 return true;
             }
             if (((this.Connection == null) 
-                 || (inputConnection == null))) {
-                     return true;
-                 }
+                        || (inputConnection == null))) {
+                return true;
+            }
             if (string.Equals(this.Connection.ConnectionString, inputConnection.ConnectionString, global::System.StringComparison.Ordinal)) {
                 return true;
             }
@@ -1501,28 +1508,28 @@ namespace ErikoWebServisas
 
                 global::System.Data.DataRow parent = row.GetParentRow(this._relation, global::System.Data.DataRowVersion.Default);
                 for (
-                    ; ((parent != null) 
-                       && (traversedRows.ContainsKey(parent) == false)); 
-                    ) {
-                        distance = (distance + 1);
-                        root = parent;
-                        traversedRows[parent] = parent;
-                        parent = parent.GetParentRow(this._relation, global::System.Data.DataRowVersion.Default);
-                    }
+                ; ((parent != null) 
+                            && (traversedRows.ContainsKey(parent) == false)); 
+                ) {
+                    distance = (distance + 1);
+                    root = parent;
+                    traversedRows[parent] = parent;
+                    parent = parent.GetParentRow(this._relation, global::System.Data.DataRowVersion.Default);
+                }
 
                 if ((distance == 0)) {
                     traversedRows.Clear();
                     traversedRows[row] = row;
                     parent = row.GetParentRow(this._relation, global::System.Data.DataRowVersion.Original);
                     for (
-                        ; ((parent != null) 
-                           && (traversedRows.ContainsKey(parent) == false)); 
-                        ) {
-                            distance = (distance + 1);
-                            root = parent;
-                            traversedRows[parent] = parent;
-                            parent = parent.GetParentRow(this._relation, global::System.Data.DataRowVersion.Original);
-                        }
+                    ; ((parent != null) 
+                                && (traversedRows.ContainsKey(parent) == false)); 
+                    ) {
+                        distance = (distance + 1);
+                        root = parent;
+                        traversedRows[parent] = parent;
+                        parent = parent.GetParentRow(this._relation, global::System.Data.DataRowVersion.Original);
+                    }
                 }
 
                 return root;
@@ -1552,7 +1559,7 @@ namespace ErikoWebServisas
                 }
                 else {
                     global::System.Diagnostics.Debug.Assert(((root1.Table != null) 
-                                                             && (root2.Table != null)));
+                                    && (root2.Table != null)));
                     if ((root1.Table.Rows.IndexOf(root1) < root2.Table.Rows.IndexOf(root2))) {
                         return -1;
                     }
@@ -1563,6 +1570,6 @@ namespace ErikoWebServisas
             }
         }
     }
+}
 
 #pragma warning restore 1591
-}
