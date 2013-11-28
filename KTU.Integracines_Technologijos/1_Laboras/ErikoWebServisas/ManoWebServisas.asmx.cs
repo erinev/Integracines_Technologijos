@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Web.Services;
-using ErikoWebServisas.DuomenisTableAdapters;
 
 namespace ErikoWebServisas
 {
