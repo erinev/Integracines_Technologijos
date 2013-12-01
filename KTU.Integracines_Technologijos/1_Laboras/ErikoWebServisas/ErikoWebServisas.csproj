@@ -49,6 +49,7 @@
       <DependentUpon>Integracines_Technologijos.mdf</DependentUpon>
     </Content>
     <Content Include="ManoWebServisas.asmx" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -69,7 +70,6 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="Duomenis.xsc">
       <DependentUpon>Duomenis.xsd</DependentUpon>

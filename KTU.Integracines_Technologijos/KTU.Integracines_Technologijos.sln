@@ -18,6 +18,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErikoWebServisas", "1_Laboras\ErikoWebServisas\ErikoWebServisas.csproj", "{47E82C5E-BA95-4B42-9666-09C2E19AF0E3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServisoClientas", "WebServisoClientas\WebServisoClientas.csproj", "{E9F9437E-FE1F-4DF1-BD5C-3837B84B7F9A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{47E82C5E-BA95-4B42-9666-09C2E19AF0E3} = {47E82C5E-BA95-4B42-9666-09C2E19AF0E3}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

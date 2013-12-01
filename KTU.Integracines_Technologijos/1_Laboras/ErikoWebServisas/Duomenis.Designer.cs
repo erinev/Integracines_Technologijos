@@ -8,10 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ErikoWebServisas
-{
 #pragma warning disable 1591
 
+namespace ErikoWebServisas {
+    
+    
     /// <summary>
     ///Represents a strongly typed in-memory cache of data.
     ///</summary>
@@ -29,9 +30,9 @@ namespace ErikoWebServisas
         
         private Studiju_planasDataTable tableStudiju_planas;
         
-        private global::System.Data.DataRelation relationFK_Studiju_planas_Studentai;
+        private global::System.Data.DataRelation relationFK_Studiju_planas_Paskaitos1;
         
-        private global::System.Data.DataRelation relationFK_Studiju_planas_Paskaitos;
+        private global::System.Data.DataRelation relationFK_Studiju_planas_Studentai1;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -49,7 +50,7 @@ namespace ErikoWebServisas
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         protected Duomenis(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-            base(info, context, false) {
+                base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
                 global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler1 = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -86,7 +87,7 @@ namespace ErikoWebServisas
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
             base.Tables.CollectionChanged += schemaChangedHandler;
             this.Relations.CollectionChanged += schemaChangedHandler;
-            }
+        }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -245,8 +246,8 @@ namespace ErikoWebServisas
                     this.tableStudiju_planas.InitVars();
                 }
             }
-            this.relationFK_Studiju_planas_Studentai = this.Relations["FK_Studiju_planas_Studentai"];
-            this.relationFK_Studiju_planas_Paskaitos = this.Relations["FK_Studiju_planas_Paskaitos"];
+            this.relationFK_Studiju_planas_Paskaitos1 = this.Relations["FK_Studiju_planas_Paskaitos1"];
+            this.relationFK_Studiju_planas_Studentai1 = this.Relations["FK_Studiju_planas_Studentai1"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -263,14 +264,14 @@ namespace ErikoWebServisas
             base.Tables.Add(this.tableStudentai);
             this.tableStudiju_planas = new Studiju_planasDataTable();
             base.Tables.Add(this.tableStudiju_planas);
-            this.relationFK_Studiju_planas_Studentai = new global::System.Data.DataRelation("FK_Studiju_planas_Studentai", new global::System.Data.DataColumn[] {
-                this.tableStudentai.ID_StudentasColumn}, new global::System.Data.DataColumn[] {
-                    this.tableStudiju_planas.ID_StudentasColumn}, false);
-            this.Relations.Add(this.relationFK_Studiju_planas_Studentai);
-            this.relationFK_Studiju_planas_Paskaitos = new global::System.Data.DataRelation("FK_Studiju_planas_Paskaitos", new global::System.Data.DataColumn[] {
-                this.tablePaskaitos.KodasColumn}, new global::System.Data.DataColumn[] {
-                    this.tableStudiju_planas.Paskaitos_kodasColumn}, false);
-            this.Relations.Add(this.relationFK_Studiju_planas_Paskaitos);
+            this.relationFK_Studiju_planas_Paskaitos1 = new global::System.Data.DataRelation("FK_Studiju_planas_Paskaitos1", new global::System.Data.DataColumn[] {
+                        this.tablePaskaitos.KodasColumn}, new global::System.Data.DataColumn[] {
+                        this.tableStudiju_planas.Paskaitos_kodasColumn}, false);
+            this.Relations.Add(this.relationFK_Studiju_planas_Paskaitos1);
+            this.relationFK_Studiju_planas_Studentai1 = new global::System.Data.DataRelation("FK_Studiju_planas_Studentai1", new global::System.Data.DataColumn[] {
+                        this.tableStudentai.ID_StudentasColumn}, new global::System.Data.DataColumn[] {
+                        this.tableStudiju_planas.ID_StudentasColumn}, false);
+            this.Relations.Add(this.relationFK_Studiju_planas_Studentai1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -324,9 +325,9 @@ namespace ErikoWebServisas
                             s1.Position = 0;
                             s2.Position = 0;
                             for (; ((s1.Position != s1.Length) 
-                                    && (s1.ReadByte() == s2.ReadByte())); ) {
-                                        ;
-                                    }
+                                        && (s1.ReadByte() == s2.ReadByte())); ) {
+                                ;
+                            }
                             if ((s1.Position == s1.Length)) {
                                 return type;
                             }
@@ -395,9 +396,9 @@ namespace ErikoWebServisas
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected PaskaitosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                base(info, context) {
+                    base(info, context) {
                 this.InitVars();
-                }
+            }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -455,8 +456,8 @@ namespace ErikoWebServisas
             public PaskaitosRow AddPaskaitosRow(string Kodas, string Pavadinimas) {
                 PaskaitosRow rowPaskaitosRow = ((PaskaitosRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                    Kodas,
-                    Pavadinimas};
+                        Kodas,
+                        Pavadinimas};
                 rowPaskaitosRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowPaskaitosRow);
                 return rowPaskaitosRow;
@@ -491,7 +492,7 @@ namespace ErikoWebServisas
                 this.columnPavadinimas = new global::System.Data.DataColumn("Pavadinimas", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPavadinimas);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                    this.columnKodas}, false));
+                                this.columnKodas}, false));
                 this.columnKodas.AllowDBNull = false;
                 this.columnKodas.Unique = true;
                 this.columnKodas.MaxLength = 10;
@@ -600,9 +601,9 @@ namespace ErikoWebServisas
                                 s1.Position = 0;
                                 s2.Position = 0;
                                 for (; ((s1.Position != s1.Length) 
-                                        && (s1.ReadByte() == s2.ReadByte())); ) {
-                                            ;
-                                        }
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
                                 if ((s1.Position == s1.Length)) {
                                     return type;
                                 }
@@ -665,9 +666,9 @@ namespace ErikoWebServisas
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected StudentaiDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                base(info, context) {
+                    base(info, context) {
                 this.InitVars();
-                }
+            }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -733,9 +734,9 @@ namespace ErikoWebServisas
             public StudentaiRow AddStudentaiRow(string ID_Studentas, string Vardas, string Pavarde) {
                 StudentaiRow rowStudentaiRow = ((StudentaiRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                    ID_Studentas,
-                    Vardas,
-                    Pavarde};
+                        ID_Studentas,
+                        Vardas,
+                        Pavarde};
                 rowStudentaiRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowStudentaiRow);
                 return rowStudentaiRow;
@@ -745,7 +746,7 @@ namespace ErikoWebServisas
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public StudentaiRow FindByID_Studentas(string ID_Studentas) {
                 return ((StudentaiRow)(this.Rows.Find(new object[] {
-                    ID_Studentas})));
+                            ID_Studentas})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -780,7 +781,7 @@ namespace ErikoWebServisas
                 this.columnPavarde = new global::System.Data.DataColumn("Pavarde", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPavarde);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                    this.columnID_Studentas}, true));
+                                this.columnID_Studentas}, true));
                 this.columnID_Studentas.AllowDBNull = false;
                 this.columnID_Studentas.Unique = true;
                 this.columnID_Studentas.MaxLength = 10;
@@ -891,9 +892,9 @@ namespace ErikoWebServisas
                                 s1.Position = 0;
                                 s2.Position = 0;
                                 for (; ((s1.Position != s1.Length) 
-                                        && (s1.ReadByte() == s2.ReadByte())); ) {
-                                            ;
-                                        }
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
                                 if ((s1.Position == s1.Length)) {
                                     return type;
                                 }
@@ -920,6 +921,8 @@ namespace ErikoWebServisas
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class Studiju_planasDataTable : global::System.Data.TypedTableBase<Studiju_planasRow> {
+            
+            private global::System.Data.DataColumn columnid;
             
             private global::System.Data.DataColumn columnID_Studentas;
             
@@ -958,9 +961,17 @@ namespace ErikoWebServisas
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected Studiju_planasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                base(info, context) {
+                    base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idColumn {
+                get {
+                    return this.columnid;
                 }
+            }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1031,22 +1042,30 @@ namespace ErikoWebServisas
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public Studiju_planasRow AddStudiju_planasRow(StudentaiRow parentStudentaiRowByFK_Studiju_planas_Studentai, PaskaitosRow parentPaskaitosRowByFK_Studiju_planas_Paskaitos, string Diena, string Laikas) {
+            public Studiju_planasRow AddStudiju_planasRow(StudentaiRow parentStudentaiRowByFK_Studiju_planas_Studentai1, PaskaitosRow parentPaskaitosRowByFK_Studiju_planas_Paskaitos1, string Diena, string Laikas) {
                 Studiju_planasRow rowStudiju_planasRow = ((Studiju_planasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                    null,
-                    null,
-                    Diena,
-                    Laikas};
-                if ((parentStudentaiRowByFK_Studiju_planas_Studentai != null)) {
-                    columnValuesArray[0] = parentStudentaiRowByFK_Studiju_planas_Studentai[0];
+                        null,
+                        null,
+                        null,
+                        Diena,
+                        Laikas};
+                if ((parentStudentaiRowByFK_Studiju_planas_Studentai1 != null)) {
+                    columnValuesArray[1] = parentStudentaiRowByFK_Studiju_planas_Studentai1[0];
                 }
-                if ((parentPaskaitosRowByFK_Studiju_planas_Paskaitos != null)) {
-                    columnValuesArray[1] = parentPaskaitosRowByFK_Studiju_planas_Paskaitos[0];
+                if ((parentPaskaitosRowByFK_Studiju_planas_Paskaitos1 != null)) {
+                    columnValuesArray[2] = parentPaskaitosRowByFK_Studiju_planas_Paskaitos1[0];
                 }
                 rowStudiju_planasRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowStudiju_planasRow);
                 return rowStudiju_planasRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public Studiju_planasRow FindByid(int id) {
+                return ((Studiju_planasRow)(this.Rows.Find(new object[] {
+                            id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1066,6 +1085,7 @@ namespace ErikoWebServisas
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
+                this.columnid = base.Columns["id"];
                 this.columnID_Studentas = base.Columns["ID_Studentas"];
                 this.columnPaskaitos_kodas = base.Columns["Paskaitos_kodas"];
                 this.columnDiena = base.Columns["Diena"];
@@ -1075,6 +1095,8 @@ namespace ErikoWebServisas
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
+                this.columnid = new global::System.Data.DataColumn("id", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
                 this.columnID_Studentas = new global::System.Data.DataColumn("ID_Studentas", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnID_Studentas);
                 this.columnPaskaitos_kodas = new global::System.Data.DataColumn("Paskaitos_kodas", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1083,12 +1105,20 @@ namespace ErikoWebServisas
                 base.Columns.Add(this.columnDiena);
                 this.columnLaikas = new global::System.Data.DataColumn("Laikas", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnLaikas);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid}, true));
+                this.columnid.AutoIncrement = true;
+                this.columnid.AutoIncrementSeed = -1;
+                this.columnid.AutoIncrementStep = -1;
+                this.columnid.AllowDBNull = false;
+                this.columnid.ReadOnly = true;
+                this.columnid.Unique = true;
                 this.columnID_Studentas.AllowDBNull = false;
                 this.columnID_Studentas.MaxLength = 10;
                 this.columnPaskaitos_kodas.AllowDBNull = false;
                 this.columnPaskaitos_kodas.MaxLength = 10;
                 this.columnDiena.AllowDBNull = false;
-                this.columnDiena.MaxLength = 10;
+                this.columnDiena.MaxLength = 20;
                 this.columnLaikas.AllowDBNull = false;
                 this.columnLaikas.MaxLength = 12;
             }
@@ -1194,9 +1224,9 @@ namespace ErikoWebServisas
                                 s1.Position = 0;
                                 s2.Position = 0;
                                 for (; ((s1.Position != s1.Length) 
-                                        && (s1.ReadByte() == s2.ReadByte())); ) {
-                                            ;
-                                        }
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
                                 if ((s1.Position == s1.Length)) {
                                     return type;
                                 }
@@ -1227,9 +1257,9 @@ namespace ErikoWebServisas
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal PaskaitosRow(global::System.Data.DataRowBuilder rb) : 
-                base(rb) {
+                    base(rb) {
                 this.tablePaskaitos = ((PaskaitosDataTable)(this.Table));
-                }
+            }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1256,11 +1286,11 @@ namespace ErikoWebServisas
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Studiju_planasRow[] GetStudiju_planasRows() {
-                if ((this.Table.ChildRelations["FK_Studiju_planas_Paskaitos"] == null)) {
+                if ((this.Table.ChildRelations["FK_Studiju_planas_Paskaitos1"] == null)) {
                     return new Studiju_planasRow[0];
                 }
                 else {
-                    return ((Studiju_planasRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Studiju_planas_Paskaitos"])));
+                    return ((Studiju_planasRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Studiju_planas_Paskaitos1"])));
                 }
             }
         }
@@ -1275,9 +1305,9 @@ namespace ErikoWebServisas
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal StudentaiRow(global::System.Data.DataRowBuilder rb) : 
-                base(rb) {
+                    base(rb) {
                 this.tableStudentai = ((StudentaiDataTable)(this.Table));
-                }
+            }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1315,11 +1345,11 @@ namespace ErikoWebServisas
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public Studiju_planasRow[] GetStudiju_planasRows() {
-                if ((this.Table.ChildRelations["FK_Studiju_planas_Studentai"] == null)) {
+                if ((this.Table.ChildRelations["FK_Studiju_planas_Studentai1"] == null)) {
                     return new Studiju_planasRow[0];
                 }
                 else {
-                    return ((Studiju_planasRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Studiju_planas_Studentai"])));
+                    return ((Studiju_planasRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Studiju_planas_Studentai1"])));
                 }
             }
         }
@@ -1334,9 +1364,20 @@ namespace ErikoWebServisas
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal Studiju_planasRow(global::System.Data.DataRowBuilder rb) : 
-                base(rb) {
+                    base(rb) {
                 this.tableStudiju_planas = ((Studiju_planasDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int id {
+                get {
+                    return ((int)(this[this.tableStudiju_planas.idColumn]));
                 }
+                set {
+                    this[this.tableStudiju_planas.idColumn] = value;
+                }
+            }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1384,23 +1425,23 @@ namespace ErikoWebServisas
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public StudentaiRow StudentaiRow {
+            public PaskaitosRow PaskaitosRow {
                 get {
-                    return ((StudentaiRow)(this.GetParentRow(this.Table.ParentRelations["FK_Studiju_planas_Studentai"])));
+                    return ((PaskaitosRow)(this.GetParentRow(this.Table.ParentRelations["FK_Studiju_planas_Paskaitos1"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Studiju_planas_Studentai"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Studiju_planas_Paskaitos1"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public PaskaitosRow PaskaitosRow {
+            public StudentaiRow StudentaiRow {
                 get {
-                    return ((PaskaitosRow)(this.GetParentRow(this.Table.ParentRelations["FK_Studiju_planas_Paskaitos"])));
+                    return ((StudentaiRow)(this.GetParentRow(this.Table.ParentRelations["FK_Studiju_planas_Studentai1"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Studiju_planas_Paskaitos"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Studiju_planas_Studentai1"]);
                 }
             }
         }
@@ -1507,7 +1548,10 @@ namespace ErikoWebServisas
             }
         }
     }
-
+}
+namespace ErikoWebServisas.DuomenisTableAdapters {
+    
+    
     /// <summary>
     ///Represents the connection and commands used to retrieve and save data.
     ///</summary>
@@ -1515,7 +1559,7 @@ namespace ErikoWebServisas
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.ComponentModel.DataObjectAttribute(true)]
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-                                                     ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class PaskaitosTableAdapter : global::System.ComponentModel.Component {
         
@@ -1586,17 +1630,17 @@ namespace ErikoWebServisas
                     this.CommandCollection[i].Transaction = this._transaction;
                 }
                 if (((this.Adapter != null) 
-                     && (this.Adapter.DeleteCommand != null))) {
-                         this.Adapter.DeleteCommand.Transaction = this._transaction;
-                     }
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
                 if (((this.Adapter != null) 
-                     && (this.Adapter.InsertCommand != null))) {
-                         this.Adapter.InsertCommand.Transaction = this._transaction;
-                     }
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
                 if (((this.Adapter != null) 
-                     && (this.Adapter.UpdateCommand != null))) {
-                         this.Adapter.UpdateCommand.Transaction = this._transaction;
-                     }
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
             }
         }
         
@@ -1646,7 +1690,7 @@ namespace ErikoWebServisas
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [Paskaitos] SET [kodas] = @kodas, [Pavadinimas] = @Pavadinimas WHERE (([ko" +
-                                                      "das] = @Original_kodas))";
+                "das] = @Original_kodas))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kodas", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kodas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pavadinimas", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Pavadinimas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1671,16 +1715,16 @@ namespace ErikoWebServisas
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "\r\n                      UPDATE       Paskaitos\r\n                      SET        " +
-                                                     "        Pavadinimas = @Pavadinimas\r\n                      WHERE        (kodas = " +
-                                                     "@PaskaitosKodas)\r\n                    ";
+                "        Pavadinimas = @Pavadinimas\r\n                      WHERE        (kodas = " +
+                "@PaskaitosKodas)\r\n                    ";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pavadinimas", global::System.Data.SqlDbType.NChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Pavadinimas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaskaitosKodas", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "kodas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "\r\n                      INSERT INTO Paskaitos\r\n                      (kodas, Pava" +
-                                                     "dinimas)\r\n                      VALUES        (@kodas,@Pavadinimas);\r\n          " +
-                                                     "          ";
+                "dinimas)\r\n                      VALUES        (@kodas,@Pavadinimas);\r\n          " +
+                "          ";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@kodas", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "kodas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Pavadinimas", global::System.Data.SqlDbType.NChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Pavadinimas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1721,7 +1765,7 @@ namespace ErikoWebServisas
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(global::System.Data.DataRow dataRow) {
             return this.Adapter.Update(new global::System.Data.DataRow[] {
-                dataRow});
+                        dataRow});
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1751,9 +1795,9 @@ namespace ErikoWebServisas
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                 != global::System.Data.ConnectionState.Open)) {
-                     command.Connection.Open();
-                 }
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
             int returnValue;
             try {
                 returnValue = command.ExecuteNonQuery();
@@ -1786,9 +1830,9 @@ namespace ErikoWebServisas
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                 != global::System.Data.ConnectionState.Open)) {
-                     command.Connection.Open();
-                 }
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
             int returnValue;
             try {
                 returnValue = command.ExecuteNonQuery();
@@ -1815,9 +1859,9 @@ namespace ErikoWebServisas
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                 != global::System.Data.ConnectionState.Open)) {
-                     command.Connection.Open();
-                 }
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
             int returnValue;
             try {
                 returnValue = command.ExecuteNonQuery();
@@ -1838,7 +1882,7 @@ namespace ErikoWebServisas
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.ComponentModel.DataObjectAttribute(true)]
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-                                                     ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class StudentaiTableAdapter : global::System.ComponentModel.Component {
         
@@ -1909,17 +1953,17 @@ namespace ErikoWebServisas
                     this.CommandCollection[i].Transaction = this._transaction;
                 }
                 if (((this.Adapter != null) 
-                     && (this.Adapter.DeleteCommand != null))) {
-                         this.Adapter.DeleteCommand.Transaction = this._transaction;
-                     }
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
                 if (((this.Adapter != null) 
-                     && (this.Adapter.InsertCommand != null))) {
-                         this.Adapter.InsertCommand.Transaction = this._transaction;
-                     }
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
                 if (((this.Adapter != null) 
-                     && (this.Adapter.UpdateCommand != null))) {
-                         this.Adapter.UpdateCommand.Transaction = this._transaction;
-                     }
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
             }
         }
         
@@ -1964,7 +2008,7 @@ namespace ErikoWebServisas
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Studentai] ([ID_Studentas], [Vardas], [Pavarde]) VALUES (@ID_S" +
-                                                      "tudentas, @Vardas, @Pavarde)";
+                "tudentas, @Vardas, @Pavarde)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Studentas", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Studentas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Vardas", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vardas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -1972,7 +2016,7 @@ namespace ErikoWebServisas
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Studentai] SET [ID_Studentas] = @ID_Studentas, [Vardas] = @Vardas, " +
-                                                      "[Pavarde] = @Pavarde WHERE (([ID_Studentas] = @Original_ID_Studentas))";
+                "[Pavarde] = @Pavarde WHERE (([ID_Studentas] = @Original_ID_Studentas))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Studentas", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Studentas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Vardas", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Vardas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2027,7 +2071,7 @@ namespace ErikoWebServisas
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(global::System.Data.DataRow dataRow) {
             return this.Adapter.Update(new global::System.Data.DataRow[] {
-                dataRow});
+                        dataRow});
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2045,7 +2089,7 @@ namespace ErikoWebServisas
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.ComponentModel.DataObjectAttribute(true)]
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-                                                     ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
     public partial class Studiju_planasTableAdapter : global::System.ComponentModel.Component {
         
@@ -2116,17 +2160,17 @@ namespace ErikoWebServisas
                     this.CommandCollection[i].Transaction = this._transaction;
                 }
                 if (((this.Adapter != null) 
-                     && (this.Adapter.DeleteCommand != null))) {
-                         this.Adapter.DeleteCommand.Transaction = this._transaction;
-                     }
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
                 if (((this.Adapter != null) 
-                     && (this.Adapter.InsertCommand != null))) {
-                         this.Adapter.InsertCommand.Transaction = this._transaction;
-                     }
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
                 if (((this.Adapter != null) 
-                     && (this.Adapter.UpdateCommand != null))) {
-                         this.Adapter.UpdateCommand.Transaction = this._transaction;
-                     }
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
             }
         }
         
@@ -2159,20 +2203,37 @@ namespace ErikoWebServisas
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Studiju_planas";
+            tableMapping.ColumnMappings.Add("id", "id");
             tableMapping.ColumnMappings.Add("ID_Studentas", "ID_Studentas");
             tableMapping.ColumnMappings.Add("Paskaitos_kodas", "Paskaitos_kodas");
             tableMapping.ColumnMappings.Add("Diena", "Diena");
             tableMapping.ColumnMappings.Add("Laikas", "Laikas");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Studiju_planas] WHERE (([id] = @Original_id))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
             this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Studiju_planas] ([ID_Studentas], [Paskaitos_kodas], [Diena], [" +
-                                                      "Laikas]) VALUES (@ID_Studentas, @Paskaitos_kodas, @Diena, @Laikas)";
+                "Laikas]) VALUES (@ID_Studentas, @Paskaitos_kodas, @Diena, @Laikas)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Studentas", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Studentas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Paskaitos_kodas", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paskaitos_kodas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Diena", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Diena", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Laikas", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Laikas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Studiju_planas] SET [ID_Studentas] = @ID_Studentas, [Paskaitos_koda" +
+                "s] = @Paskaitos_kodas, [Diena] = @Diena, [Laikas] = @Laikas WHERE (([id] = @Orig" +
+                "inal_id))";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID_Studentas", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Studentas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Paskaitos_kodas", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Paskaitos_kodas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Diena", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Diena", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Laikas", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Laikas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2188,56 +2249,76 @@ namespace ErikoWebServisas
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_Studentas, Paskaitos_kodas, Diena, Laikas FROM dbo.Studiju_planas";
+            this._commandCollection[0].CommandText = "SELECT id, ID_Studentas, Paskaitos_kodas, Diena, Laikas FROM dbo.Studiju_planas";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "UPDATE Studiju_planas\r\nSET Diena = @Diena, Laikas = @Laikas\r\nWHERE Paskaitos_koda" +
-                                                     "s = @PaskaitosKodas";
+            this._commandCollection[1].CommandText = "\r\n                      UPDATE Studiju_planas\r\n                      SET Diena = " +
+                "@Diena, Laikas = @Laikas\r\n                      WHERE Paskaitos_kodas = @Paskait" +
+                "osKodas\r\n                    ";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Diena", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Diena", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Diena", global::System.Data.SqlDbType.NChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Diena", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Laikas", global::System.Data.SqlDbType.NChar, 12, global::System.Data.ParameterDirection.Input, 0, 0, "Laikas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaskaitosKodas", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Paskaitos_kodas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT Paskaitos.Pavadinimas \r\nFROM Paskaitos\r\nINNER JOIN Studiju_planas\r\nON Pask" +
-                                                     "aitos.Kodas = Studiju_planas.Paskaitos_kodas\r\nWHERE Studiju_planas.Diena = @Dien" +
-                                                     "a AND Studiju_planas.Laikas = @Laikas AND Studiju_planas.ID_Studentas = @Student" +
-                                                     "oID";
+            this._commandCollection[2].CommandText = @"
+                      SELECT Paskaitos.Pavadinimas
+                      FROM Paskaitos
+                      INNER JOIN Studiju_planas
+                      ON Paskaitos.Kodas = Studiju_planas.Paskaitos_kodas
+                      WHERE Studiju_planas.Diena = @Diena AND Studiju_planas.Laikas = @Laikas AND Studiju_planas.ID_Studentas = @StudentoID
+                    ";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Diena", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Diena", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Diena", global::System.Data.SqlDbType.NChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Diena", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Laikas", global::System.Data.SqlDbType.NChar, 12, global::System.Data.ParameterDirection.Input, 0, 0, "Laikas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StudentoID", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Studentas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = @"SELECT Paskaitos.Pavadinimas, Studiju_planas.Diena, Studiju_planas.Laikas, Studentai.Vardas, Studentai.Pavarde
-FROM Paskaitos
-INNER JOIN Studiju_planas 
-ON Paskaitos.kodas = Studiju_planas.Paskaitos_kodas
-INNER JOIN Studentai
-ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas";
+            this._commandCollection[3].CommandText = @"
+                      SELECT        Paskaitos.Pavadinimas, Studiju_planas.Diena, Studiju_planas.Laikas, Studentai.Vardas, Studentai.Pavarde
+                      FROM            dbo.Paskaitos INNER JOIN
+                      dbo.Studiju_planas ON Paskaitos.Kodas = Studiju_planas.Paskaitos_kodas INNER JOIN
+                      dbo.Studentai ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas
+                    ";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
-            this._commandCollection[4].CommandText = "DELETE FROM Studiju_planas\r\nWHERE Paskaitos_kodas = @PaskaitosKodas";
+            this._commandCollection[4].CommandText = "\r\n                      DELETE FROM Studiju_planas\r\n                      WHERE P" +
+                "askaitos_kodas = @PaskaitosKodas\r\n                    ";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaskaitosKodas", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Paskaitos_kodas", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[5].Connection = this.Connection;
-            this._commandCollection[5].CommandText = "INSERT INTO Studiju_planas \r\n(ID_Studentas, Paskaitos_kodas, Diena, Laikas) \r\nVAL" +
-                                                     "UES \r\n(@StudentoID, @PaskaitosKodas, @Diena, @Laikas)";
+            this._commandCollection[5].CommandText = "\r\n                      INSERT INTO Studiju_planas\r\n                      (ID_Stu" +
+                "dentas, Paskaitos_kodas, Diena, Laikas)\r\n                      VALUES\r\n         " +
+                "             (@StudentoID, @PaskaitosKodas, @Diena, @Laikas)\r\n                  " +
+                "  ";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StudentoID", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "ID_Studentas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PaskaitosKodas", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Paskaitos_kodas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Diena", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Diena", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Diena", global::System.Data.SqlDbType.NChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Diena", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Laikas", global::System.Data.SqlDbType.NChar, 12, global::System.Data.ParameterDirection.Input, 0, 0, "Laikas", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(Duomenis.Studiju_planasDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Duomenis.Studiju_planasDataTable GautiStudijuPlanoDuomenis() {
+        public virtual Duomenis.Studiju_planasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             Duomenis.Studiju_planasDataTable dataTable = new Duomenis.Studiju_planasDataTable();
             this.Adapter.Fill(dataTable);
@@ -2274,7 +2355,7 @@ ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(global::System.Data.DataRow dataRow) {
             return this.Adapter.Update(new global::System.Data.DataRow[] {
-                dataRow});
+                        dataRow});
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2282,6 +2363,119 @@ ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas";
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(global::System.Data.DataRow[] dataRows) {
             return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_id) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string ID_Studentas, string Paskaitos_kodas, string Diena, string Laikas) {
+            if ((ID_Studentas == null)) {
+                throw new global::System.ArgumentNullException("ID_Studentas");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(ID_Studentas));
+            }
+            if ((Paskaitos_kodas == null)) {
+                throw new global::System.ArgumentNullException("Paskaitos_kodas");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Paskaitos_kodas));
+            }
+            if ((Diena == null)) {
+                throw new global::System.ArgumentNullException("Diena");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Diena));
+            }
+            if ((Laikas == null)) {
+                throw new global::System.ArgumentNullException("Laikas");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Laikas));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string ID_Studentas, string Paskaitos_kodas, string Diena, string Laikas, int Original_id) {
+            if ((ID_Studentas == null)) {
+                throw new global::System.ArgumentNullException("ID_Studentas");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(ID_Studentas));
+            }
+            if ((Paskaitos_kodas == null)) {
+                throw new global::System.ArgumentNullException("Paskaitos_kodas");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Paskaitos_kodas));
+            }
+            if ((Diena == null)) {
+                throw new global::System.ArgumentNullException("Diena");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Diena));
+            }
+            if ((Laikas == null)) {
+                throw new global::System.ArgumentNullException("Laikas");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Laikas));
+            }
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_id));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2310,9 +2504,9 @@ ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas";
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                 != global::System.Data.ConnectionState.Open)) {
-                     command.Connection.Open();
-                 }
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
             int returnValue;
             try {
                 returnValue = command.ExecuteNonQuery();
@@ -2328,7 +2522,7 @@ ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual object GautiPaskaitaPagalLaikaIrStudentoID(string Diena, string Laikas, string StudentoID) {
+        public virtual string GautiPaskaitaPagalLaikaIrStudentoID(string Diena, string Laikas, string StudentoID) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
             if ((Diena == null)) {
                 throw new global::System.ArgumentNullException("Diena");
@@ -2350,9 +2544,9 @@ ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas";
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                 != global::System.Data.ConnectionState.Open)) {
-                     command.Connection.Open();
-                 }
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
             object returnValue;
             try {
                 returnValue = command.ExecuteScalar();
@@ -2363,18 +2557,18 @@ ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas";
                 }
             }
             if (((returnValue == null) 
-                 || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                     return null;
-                 }
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
             else {
-                return ((object)(returnValue));
+                return ((string)(returnValue));
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
         public virtual int IstrintiPaskaitaIsStudijuPlano(string PaskaitosKodas) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[4];
             if ((PaskaitosKodas == null)) {
@@ -2385,9 +2579,9 @@ ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas";
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                 != global::System.Data.ConnectionState.Open)) {
-                     command.Connection.Open();
-                 }
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
             int returnValue;
             try {
                 returnValue = command.ExecuteNonQuery();
@@ -2432,9 +2626,9 @@ ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas";
             }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                 != global::System.Data.ConnectionState.Open)) {
-                     command.Connection.Open();
-                 }
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
             int returnValue;
             try {
                 returnValue = command.ExecuteNonQuery();
@@ -2454,7 +2648,7 @@ ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas";
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerDesigner, Microsoft.VSD" +
-                                                     "esigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+        "esigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapterManager")]
     public partial class TableAdapterManager : global::System.ComponentModel.Component {
         
@@ -2484,8 +2678,8 @@ ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-                                                       "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-                                                       "a", "System.Drawing.Design.UITypeEditor")]
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
         public PaskaitosTableAdapter PaskaitosTableAdapter {
             get {
                 return this._paskaitosTableAdapter;
@@ -2498,8 +2692,8 @@ ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-                                                       "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-                                                       "a", "System.Drawing.Design.UITypeEditor")]
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
         public StudentaiTableAdapter StudentaiTableAdapter {
             get {
                 return this._studentaiTableAdapter;
@@ -2512,8 +2706,8 @@ ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-                                                       "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-                                                       "a", "System.Drawing.Design.UITypeEditor")]
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
         public Studiju_planasTableAdapter Studiju_planasTableAdapter {
             get {
                 return this._studiju_planasTableAdapter;
@@ -2543,17 +2737,17 @@ ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas";
                     return this._connection;
                 }
                 if (((this._paskaitosTableAdapter != null) 
-                     && (this._paskaitosTableAdapter.Connection != null))) {
-                         return this._paskaitosTableAdapter.Connection;
-                     }
+                            && (this._paskaitosTableAdapter.Connection != null))) {
+                    return this._paskaitosTableAdapter.Connection;
+                }
                 if (((this._studentaiTableAdapter != null) 
-                     && (this._studentaiTableAdapter.Connection != null))) {
-                         return this._studentaiTableAdapter.Connection;
-                     }
+                            && (this._studentaiTableAdapter.Connection != null))) {
+                    return this._studentaiTableAdapter.Connection;
+                }
                 if (((this._studiju_planasTableAdapter != null) 
-                     && (this._studiju_planasTableAdapter.Connection != null))) {
-                         return this._studiju_planasTableAdapter.Connection;
-                     }
+                            && (this._studiju_planasTableAdapter.Connection != null))) {
+                    return this._studiju_planasTableAdapter.Connection;
+                }
                 return null;
             }
             set {
@@ -2591,28 +2785,28 @@ ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas";
                 global::System.Data.DataRow[] updatedRows = dataSet.Studentai.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
-                     && (0 < updatedRows.Length))) {
-                         result = (result + this._studentaiTableAdapter.Update(updatedRows));
-                         allChangedRows.AddRange(updatedRows);
-                     }
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._studentaiTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
             }
             if ((this._paskaitosTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Paskaitos.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
-                     && (0 < updatedRows.Length))) {
-                         result = (result + this._paskaitosTableAdapter.Update(updatedRows));
-                         allChangedRows.AddRange(updatedRows);
-                     }
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._paskaitosTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
             }
             if ((this._studiju_planasTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Studiju_planas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
-                     && (0 < updatedRows.Length))) {
-                         result = (result + this._studiju_planasTableAdapter.Update(updatedRows));
-                         allChangedRows.AddRange(updatedRows);
-                     }
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._studiju_planasTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
             }
             return result;
         }
@@ -2627,26 +2821,26 @@ ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas";
             if ((this._studentaiTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Studentai.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
-                     && (0 < addedRows.Length))) {
-                         result = (result + this._studentaiTableAdapter.Update(addedRows));
-                         allAddedRows.AddRange(addedRows);
-                     }
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._studentaiTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
             }
             if ((this._paskaitosTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Paskaitos.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
-                     && (0 < addedRows.Length))) {
-                         result = (result + this._paskaitosTableAdapter.Update(addedRows));
-                         allAddedRows.AddRange(addedRows);
-                     }
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._paskaitosTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
             }
             if ((this._studiju_planasTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Studiju_planas.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
-                     && (0 < addedRows.Length))) {
-                         result = (result + this._studiju_planasTableAdapter.Update(addedRows));
-                         allAddedRows.AddRange(addedRows);
-                     }
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._studiju_planasTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
             }
             return result;
         }
@@ -2661,26 +2855,26 @@ ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas";
             if ((this._studiju_planasTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Studiju_planas.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
-                     && (0 < deletedRows.Length))) {
-                         result = (result + this._studiju_planasTableAdapter.Update(deletedRows));
-                         allChangedRows.AddRange(deletedRows);
-                     }
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._studiju_planasTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
             }
             if ((this._paskaitosTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Paskaitos.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
-                     && (0 < deletedRows.Length))) {
-                         result = (result + this._paskaitosTableAdapter.Update(deletedRows));
-                         allChangedRows.AddRange(deletedRows);
-                     }
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._paskaitosTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
             }
             if ((this._studentaiTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Studentai.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
-                     && (0 < deletedRows.Length))) {
-                         result = (result + this._studentaiTableAdapter.Update(deletedRows));
-                         allChangedRows.AddRange(deletedRows);
-                     }
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._studentaiTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
             }
             return result;
         }
@@ -2692,13 +2886,13 @@ ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private global::System.Data.DataRow[] GetRealUpdatedRows(global::System.Data.DataRow[] updatedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             if (((updatedRows == null) 
-                 || (updatedRows.Length < 1))) {
-                     return updatedRows;
-                 }
+                        || (updatedRows.Length < 1))) {
+                return updatedRows;
+            }
             if (((allAddedRows == null) 
-                 || (allAddedRows.Count < 1))) {
-                     return updatedRows;
-                 }
+                        || (allAddedRows.Count < 1))) {
+                return updatedRows;
+            }
             global::System.Collections.Generic.List<global::System.Data.DataRow> realUpdatedRows = new global::System.Collections.Generic.List<global::System.Data.DataRow>();
             for (int i = 0; (i < updatedRows.Length); i = (i + 1)) {
                 global::System.Data.DataRow row = updatedRows[i];
@@ -2722,30 +2916,30 @@ ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas";
                 return 0;
             }
             if (((this._paskaitosTableAdapter != null) 
-                 && (this.MatchTableAdapterConnection(this._paskaitosTableAdapter.Connection) == false))) {
-                     throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                                                                "tring.");
-                 }
+                        && (this.MatchTableAdapterConnection(this._paskaitosTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
             if (((this._studentaiTableAdapter != null) 
-                 && (this.MatchTableAdapterConnection(this._studentaiTableAdapter.Connection) == false))) {
-                     throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                                                                "tring.");
-                 }
+                        && (this.MatchTableAdapterConnection(this._studentaiTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
             if (((this._studiju_planasTableAdapter != null) 
-                 && (this.MatchTableAdapterConnection(this._studiju_planasTableAdapter.Connection) == false))) {
-                     throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                                                                "tring.");
-                 }
+                        && (this.MatchTableAdapterConnection(this._studiju_planasTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
+                        "tring.");
+            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana" +
-                                                              "ger TableAdapter property to a valid TableAdapter instance.");
+                        "ger TableAdapter property to a valid TableAdapter instance.");
             }
             bool workConnOpened = false;
             if (((workConnection.State & global::System.Data.ConnectionState.Broken) 
-                 == global::System.Data.ConnectionState.Broken)) {
-                     workConnection.Close();
-                 }
+                        == global::System.Data.ConnectionState.Broken)) {
+                workConnection.Close();
+            }
             if ((workConnection.State == global::System.Data.ConnectionState.Closed)) {
                 workConnection.Open();
                 workConnOpened = true;
@@ -2753,7 +2947,7 @@ ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas";
             global::System.Data.IDbTransaction workTransaction = workConnection.BeginTransaction();
             if ((workTransaction == null)) {
                 throw new global::System.ApplicationException("The transaction cannot begin. The current data connection does not support transa" +
-                                                              "ctions or the current state is not allowing the transaction to begin.");
+                        "ctions or the current state is not allowing the transaction to begin.");
             }
             global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows = new global::System.Collections.Generic.List<global::System.Data.DataRow>();
             global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows = new global::System.Collections.Generic.List<global::System.Data.DataRow>();
@@ -2890,9 +3084,9 @@ ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas";
                 return true;
             }
             if (((this.Connection == null) 
-                 || (inputConnection == null))) {
-                     return true;
-                 }
+                        || (inputConnection == null))) {
+                return true;
+            }
             if (string.Equals(this.Connection.ConnectionString, inputConnection.ConnectionString, global::System.StringComparison.Ordinal)) {
                 return true;
             }
@@ -2944,28 +3138,28 @@ ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas";
 
                 global::System.Data.DataRow parent = row.GetParentRow(this._relation, global::System.Data.DataRowVersion.Default);
                 for (
-                    ; ((parent != null) 
-                       && (traversedRows.ContainsKey(parent) == false)); 
-                    ) {
-                        distance = (distance + 1);
-                        root = parent;
-                        traversedRows[parent] = parent;
-                        parent = parent.GetParentRow(this._relation, global::System.Data.DataRowVersion.Default);
-                    }
+                ; ((parent != null) 
+                            && (traversedRows.ContainsKey(parent) == false)); 
+                ) {
+                    distance = (distance + 1);
+                    root = parent;
+                    traversedRows[parent] = parent;
+                    parent = parent.GetParentRow(this._relation, global::System.Data.DataRowVersion.Default);
+                }
 
                 if ((distance == 0)) {
                     traversedRows.Clear();
                     traversedRows[row] = row;
                     parent = row.GetParentRow(this._relation, global::System.Data.DataRowVersion.Original);
                     for (
-                        ; ((parent != null) 
-                           && (traversedRows.ContainsKey(parent) == false)); 
-                        ) {
-                            distance = (distance + 1);
-                            root = parent;
-                            traversedRows[parent] = parent;
-                            parent = parent.GetParentRow(this._relation, global::System.Data.DataRowVersion.Original);
-                        }
+                    ; ((parent != null) 
+                                && (traversedRows.ContainsKey(parent) == false)); 
+                    ) {
+                        distance = (distance + 1);
+                        root = parent;
+                        traversedRows[parent] = parent;
+                        parent = parent.GetParentRow(this._relation, global::System.Data.DataRowVersion.Original);
+                    }
                 }
 
                 return root;
@@ -2995,7 +3189,7 @@ ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas";
                 }
                 else {
                     global::System.Diagnostics.Debug.Assert(((root1.Table != null) 
-                                                             && (root2.Table != null)));
+                                    && (root2.Table != null)));
                     if ((root1.Table.Rows.IndexOf(root1) < root2.Table.Rows.IndexOf(root2))) {
                         return -1;
                     }
@@ -3006,6 +3200,6 @@ ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas";
             }
         }
     }
+}
 
 #pragma warning restore 1591
-}
