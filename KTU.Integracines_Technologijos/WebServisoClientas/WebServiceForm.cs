@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace WebServisoClientas
 {
@@ -9,9 +10,8 @@ namespace WebServisoClientas
             InitializeComponent();
         }
 
-        private void InsertTab_Click(object sender, System.EventArgs e)
+        private void InsertTab_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

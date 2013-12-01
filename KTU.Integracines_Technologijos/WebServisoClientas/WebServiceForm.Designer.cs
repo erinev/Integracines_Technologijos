@@ -30,20 +30,20 @@
         {
             this.TabControl = new System.Windows.Forms.TabControl();
             this.InsertTab = new System.Windows.Forms.TabPage();
-            this.SelectTab = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.UpdateTab = new System.Windows.Forms.TabPage();
-            this.DeleteTab = new System.Windows.Forms.TabPage();
+            this.ButtonPrideti = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.LabelPavadinimas = new System.Windows.Forms.Label();
             this.LabelKodas = new System.Windows.Forms.Label();
+            this.SelectTab = new System.Windows.Forms.TabPage();
+            this.UpdateTab = new System.Windows.Forms.TabPage();
+            this.DeleteTab = new System.Windows.Forms.TabPage();
+            this.AssignTab = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.LabelDiena = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.LabelLaikas = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.AssignTab = new System.Windows.Forms.TabPage();
-            this.ButtonPrideti = new System.Windows.Forms.Button();
             this.TabControl.SuspendLayout();
             this.InsertTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -59,7 +59,7 @@
             this.TabControl.Location = new System.Drawing.Point(12, 12);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
-            this.TabControl.Size = new System.Drawing.Size(255, 185);
+            this.TabControl.Size = new System.Drawing.Size(255, 188);
             this.TabControl.TabIndex = 0;
             // 
             // InsertTab
@@ -72,11 +72,52 @@
             this.InsertTab.Location = new System.Drawing.Point(4, 22);
             this.InsertTab.Name = "InsertTab";
             this.InsertTab.Padding = new System.Windows.Forms.Padding(3);
-            this.InsertTab.Size = new System.Drawing.Size(247, 159);
+            this.InsertTab.Size = new System.Drawing.Size(247, 162);
             this.InsertTab.TabIndex = 0;
             this.InsertTab.Text = "Įdėti";
             this.InsertTab.UseVisualStyleBackColor = true;
             this.InsertTab.Click += new System.EventHandler(this.InsertTab_Click);
+            // 
+            // ButtonPrideti
+            // 
+            this.ButtonPrideti.Location = new System.Drawing.Point(90, 110);
+            this.ButtonPrideti.Name = "ButtonPrideti";
+            this.ButtonPrideti.Size = new System.Drawing.Size(75, 23);
+            this.ButtonPrideti.TabIndex = 5;
+            this.ButtonPrideti.Text = "Pridėti";
+            this.ButtonPrideti.UseVisualStyleBackColor = true;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(90, 30);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 4;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(90, 63);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 3;
+            // 
+            // LabelPavadinimas
+            // 
+            this.LabelPavadinimas.AutoSize = true;
+            this.LabelPavadinimas.Location = new System.Drawing.Point(17, 63);
+            this.LabelPavadinimas.Name = "LabelPavadinimas";
+            this.LabelPavadinimas.Size = new System.Drawing.Size(70, 13);
+            this.LabelPavadinimas.TabIndex = 0;
+            this.LabelPavadinimas.Text = "Pavadinimas:";
+            // 
+            // LabelKodas
+            // 
+            this.LabelKodas.AutoSize = true;
+            this.LabelKodas.Location = new System.Drawing.Point(17, 30);
+            this.LabelKodas.Name = "LabelKodas";
+            this.LabelKodas.Size = new System.Drawing.Size(40, 13);
+            this.LabelKodas.TabIndex = 1;
+            this.LabelKodas.Text = "Kodas:";
             // 
             // SelectTab
             // 
@@ -87,14 +128,6 @@
             this.SelectTab.TabIndex = 1;
             this.SelectTab.Text = "Gauti";
             this.SelectTab.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(61, 242);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(388, 123);
-            this.dataGridView1.TabIndex = 1;
             // 
             // UpdateTab
             // 
@@ -114,70 +147,6 @@
             this.DeleteTab.Text = "Ištrinti";
             this.DeleteTab.UseVisualStyleBackColor = true;
             // 
-            // LabelPavadinimas
-            // 
-            this.LabelPavadinimas.AutoSize = true;
-            this.LabelPavadinimas.Location = new System.Drawing.Point(17, 54);
-            this.LabelPavadinimas.Name = "LabelPavadinimas";
-            this.LabelPavadinimas.Size = new System.Drawing.Size(70, 13);
-            this.LabelPavadinimas.TabIndex = 0;
-            this.LabelPavadinimas.Text = "Pavadinimas:";
-            // 
-            // LabelKodas
-            // 
-            this.LabelKodas.AutoSize = true;
-            this.LabelKodas.Location = new System.Drawing.Point(17, 21);
-            this.LabelKodas.Name = "LabelKodas";
-            this.LabelKodas.Size = new System.Drawing.Size(40, 13);
-            this.LabelKodas.TabIndex = 1;
-            this.LabelKodas.Text = "Kodas:";
-            // 
-            // LabelDiena
-            // 
-            this.LabelDiena.AutoSize = true;
-            this.LabelDiena.Location = new System.Drawing.Point(373, 81);
-            this.LabelDiena.Name = "LabelDiena";
-            this.LabelDiena.Size = new System.Drawing.Size(38, 13);
-            this.LabelDiena.TabIndex = 2;
-            this.LabelDiena.Text = "Diena:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(90, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 3;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(90, 21);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 4;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(349, 48);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 5;
-            // 
-            // LabelLaikas
-            // 
-            this.LabelLaikas.AutoSize = true;
-            this.LabelLaikas.Location = new System.Drawing.Point(370, 159);
-            this.LabelLaikas.Name = "LabelLaikas";
-            this.LabelLaikas.Size = new System.Drawing.Size(41, 13);
-            this.LabelLaikas.TabIndex = 6;
-            this.LabelLaikas.Text = "Laikas:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(376, 118);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 7;
-            // 
             // AssignTab
             // 
             this.AssignTab.Location = new System.Drawing.Point(4, 22);
@@ -188,14 +157,45 @@
             this.AssignTab.Text = "Priskirti";
             this.AssignTab.UseVisualStyleBackColor = true;
             // 
-            // ButtonPrideti
+            // dataGridView1
             // 
-            this.ButtonPrideti.Location = new System.Drawing.Point(90, 97);
-            this.ButtonPrideti.Name = "ButtonPrideti";
-            this.ButtonPrideti.Size = new System.Drawing.Size(75, 23);
-            this.ButtonPrideti.TabIndex = 5;
-            this.ButtonPrideti.Text = "Pridėti";
-            this.ButtonPrideti.UseVisualStyleBackColor = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(61, 216);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(388, 149);
+            this.dataGridView1.TabIndex = 1;
+            // 
+            // LabelDiena
+            // 
+            this.LabelDiena.AutoSize = true;
+            this.LabelDiena.Location = new System.Drawing.Point(292, 48);
+            this.LabelDiena.Name = "LabelDiena";
+            this.LabelDiena.Size = new System.Drawing.Size(38, 13);
+            this.LabelDiena.TabIndex = 2;
+            this.LabelDiena.Text = "Diena:";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(365, 83);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(100, 20);
+            this.textBox3.TabIndex = 5;
+            // 
+            // LabelLaikas
+            // 
+            this.LabelLaikas.AutoSize = true;
+            this.LabelLaikas.Location = new System.Drawing.Point(292, 83);
+            this.LabelLaikas.Name = "LabelLaikas";
+            this.LabelLaikas.Size = new System.Drawing.Size(41, 13);
+            this.LabelLaikas.TabIndex = 6;
+            this.LabelLaikas.Text = "Laikas:";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(365, 48);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 7;
             // 
             // WebServiceForm
             // 
@@ -203,10 +203,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(495, 377);
             this.Controls.Add(this.LabelLaikas);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.TabControl);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.LabelDiena);
             this.Name = "WebServiceForm";
             this.Text = "Studijų planas";
