@@ -147,4 +147,10 @@
   <data name="TextBoxAtnaujintiValidating_PavadinimasPrivalomas" xml:space="preserve">
     <value>Pavadinimas negali būti tuščias!</value>
   </data>
+  <data name="ButtonIstrintiClick_NepavykoIstrintiPaskaitos" xml:space="preserve">
+    <value>Nepavyko ištrinti studento paskaitos!</value>
+  </data>
+  <data name="ButtonIstrintiClick_PaskaitaIstrintiPavyko" xml:space="preserve">
+    <value>Studento paskaita ištrinta sėkmingai</value>
+  </data>
 </root>

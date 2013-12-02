@@ -48,13 +48,6 @@ namespace ErikoWebServisas
             return rowUpdated;
         }
 
-        [WebMethod]
-        public int IstrintiPaskaitaPagalKoda(string kodas)
-        {
-            int rowDeleted = _paskaitosTableAdapter.IstrintiPaskaitaPagalKoda(kodas);
-            return rowDeleted;
-        }
-
         // ---------------------- Studentai table methods --------------------- //
 
         [WebMethod]
@@ -148,16 +141,9 @@ namespace ErikoWebServisas
         }
 
         [WebMethod]
-        public int AtnaujintiPaskaitosDataPagalPaskaitosKoda(string diena, string laikas, string paskaitosKodas)
+        public int IstrintiStudentoPaskaitaIsStudijuPlano(string paskaitosKodas, string studentoId)
         {
-            int rowUpdated = _studijuPlanasTableAdapter.AtnaujintiPaskaitosData(diena, laikas, paskaitosKodas);
-            return rowUpdated;
-        }
-
-        [WebMethod]
-        public int IstrintiPaskaitaIsStudijuPlanoPagalPaskaitosKoda(string paskaitosKodas)
-        {
-            int rowDeleted = _studijuPlanasTableAdapter.IstrintiPaskaitaIsStudijuPlano(paskaitosKodas);
+            int rowDeleted = _studijuPlanasTableAdapter.IstrintiStudentoPaskaita(paskaitosKodas, studentoId);
             return rowDeleted;
         }
     }

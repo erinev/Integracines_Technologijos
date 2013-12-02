@@ -144,6 +144,23 @@ namespace WebServisoClientas
             }
         }
 
+        private void ButtonIstrinti_Click(object sender, EventArgs e)
+        {
+            var studentoId = (string) ComboBoxStudentas.SelectedValue;
+            var paskaitosKodas = (string) ComboBoxPaskaita.SelectedValue;
+
+            int deletedRow = _soapClient.IstrintiStudentoPaskaitaIsStudijuPlano(paskaitosKodas, studentoId);
+            if (deletedRow > 0)
+            {
+                MessageBox.Show(Resources.ButtonIstrintiClick_PaskaitaIstrintiPavyko);
+                this.FillGridView();
+            }
+            else
+            {
+                MessageBox.Show(Resources.ButtonIstrintiClick_NepavykoIstrintiPaskaitos);
+            }
+        }
+
         private void TextBoxInsertPaskaitosKodas_Validating(object sender, CancelEventArgs e)
         {
             if (TextBoxInsertPaskaitosKodas.Text.Trim(' ') == String.Empty)

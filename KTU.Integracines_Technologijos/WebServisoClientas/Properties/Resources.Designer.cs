@@ -88,6 +88,24 @@ namespace WebServisoClientas.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nepavyko ištrinti studento paskaitos!.
+        /// </summary>
+        internal static string ButtonIstrintiClick_NepavykoIstrintiPaskaitos {
+            get {
+                return ResourceManager.GetString("ButtonIstrintiClick_NepavykoIstrintiPaskaitos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Studento paskaita ištrinta sėkmingai.
+        /// </summary>
+        internal static string ButtonIstrintiClick_PaskaitaIstrintiPavyko {
+            get {
+                return ResourceManager.GetString("ButtonIstrintiClick_PaskaitaIstrintiPavyko", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Paskaita pridėta sėkmingai.
         /// </summary>
         internal static string ButtonPridetiClick_PaskaitaPridėtaSekmingai {

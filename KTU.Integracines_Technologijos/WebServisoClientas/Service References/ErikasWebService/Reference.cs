@@ -28,10 +28,6 @@ namespace WebServisoClientas.ErikasWebService {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         int AtnaujintiPaskaitosPavadinimaPagalKoda(string naujasPavadinimas, string paskaitosKodas);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ktu.lt/IstrintiPaskaitaPagalKoda", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        int IstrintiPaskaitaPagalKoda(string kodas);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://ktu.lt/GautiStudentus", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Data.DataTable GautiStudentus();
@@ -48,13 +44,9 @@ namespace WebServisoClientas.ErikasWebService {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         int PriskirtiPaskaitaStudentui(string studentoId, string paskaitosKodas, string diena, string laikas);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://ktu.lt/AtnaujintiPaskaitosDataPagalPaskaitosKoda", ReplyAction="*")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://ktu.lt/IstrintiStudentoPaskaitaIsStudijuPlano", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        int AtnaujintiPaskaitosDataPagalPaskaitosKoda(string diena, string laikas, string paskaitosKodas);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://ktu.lt/IstrintiPaskaitaIsStudijuPlanoPagalPaskaitosKoda", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        int IstrintiPaskaitaIsStudijuPlanoPagalPaskaitosKoda(string paskaitosKodas);
+        int IstrintiStudentoPaskaitaIsStudijuPlano(string paskaitosKodas, string studentoId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -96,10 +88,6 @@ namespace WebServisoClientas.ErikasWebService {
             return base.Channel.AtnaujintiPaskaitosPavadinimaPagalKoda(naujasPavadinimas, paskaitosKodas);
         }
         
-        public int IstrintiPaskaitaPagalKoda(string kodas) {
-            return base.Channel.IstrintiPaskaitaPagalKoda(kodas);
-        }
-        
         public System.Data.DataTable GautiStudentus() {
             return base.Channel.GautiStudentus();
         }
@@ -116,12 +104,8 @@ namespace WebServisoClientas.ErikasWebService {
             return base.Channel.PriskirtiPaskaitaStudentui(studentoId, paskaitosKodas, diena, laikas);
         }
         
-        public int AtnaujintiPaskaitosDataPagalPaskaitosKoda(string diena, string laikas, string paskaitosKodas) {
-            return base.Channel.AtnaujintiPaskaitosDataPagalPaskaitosKoda(diena, laikas, paskaitosKodas);
-        }
-        
-        public int IstrintiPaskaitaIsStudijuPlanoPagalPaskaitosKoda(string paskaitosKodas) {
-            return base.Channel.IstrintiPaskaitaIsStudijuPlanoPagalPaskaitosKoda(paskaitosKodas);
+        public int IstrintiStudentoPaskaitaIsStudijuPlano(string paskaitosKodas, string studentoId) {
+            return base.Channel.IstrintiStudentoPaskaitaIsStudijuPlano(paskaitosKodas, studentoId);
         }
     }
 }

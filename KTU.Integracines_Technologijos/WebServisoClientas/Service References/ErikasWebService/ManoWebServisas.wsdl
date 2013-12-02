@@ -57,20 +57,6 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="IstrintiPaskaitaPagalKoda">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="kodas" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="IstrintiPaskaitaPagalKodaResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="IstrintiPaskaitaPagalKodaResult" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="GautiStudentus">
         <s:complexType />
       </s:element>
@@ -140,34 +126,18 @@
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="AtnaujintiPaskaitosDataPagalPaskaitosKoda">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="diena" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="laikas" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="paskaitosKodas" type="s:string" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="AtnaujintiPaskaitosDataPagalPaskaitosKodaResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="AtnaujintiPaskaitosDataPagalPaskaitosKodaResult" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="IstrintiPaskaitaIsStudijuPlanoPagalPaskaitosKoda">
+      <s:element name="IstrintiStudentoPaskaitaIsStudijuPlano">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="paskaitosKodas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="studentoId" type="s:string" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="IstrintiPaskaitaIsStudijuPlanoPagalPaskaitosKodaResponse">
+      <s:element name="IstrintiStudentoPaskaitaIsStudijuPlanoResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="IstrintiPaskaitaIsStudijuPlanoPagalPaskaitosKodaResult"
-                       type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="IstrintiStudentoPaskaitaIsStudijuPlanoResult" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -190,12 +160,6 @@
   </wsdl:message>
   <wsdl:message name="AtnaujintiPaskaitosPavadinimaPagalKodaSoapOut">
     <wsdl:part name="parameters" element="tns:AtnaujintiPaskaitosPavadinimaPagalKodaResponse" />
-  </wsdl:message>
-  <wsdl:message name="IstrintiPaskaitaPagalKodaSoapIn">
-    <wsdl:part name="parameters" element="tns:IstrintiPaskaitaPagalKoda" />
-  </wsdl:message>
-  <wsdl:message name="IstrintiPaskaitaPagalKodaSoapOut">
-    <wsdl:part name="parameters" element="tns:IstrintiPaskaitaPagalKodaResponse" />
   </wsdl:message>
   <wsdl:message name="GautiStudentusSoapIn">
     <wsdl:part name="parameters" element="tns:GautiStudentus" />
@@ -221,17 +185,11 @@
   <wsdl:message name="PriskirtiPaskaitaStudentuiSoapOut">
     <wsdl:part name="parameters" element="tns:PriskirtiPaskaitaStudentuiResponse" />
   </wsdl:message>
-  <wsdl:message name="AtnaujintiPaskaitosDataPagalPaskaitosKodaSoapIn">
-    <wsdl:part name="parameters" element="tns:AtnaujintiPaskaitosDataPagalPaskaitosKoda" />
+  <wsdl:message name="IstrintiStudentoPaskaitaIsStudijuPlanoSoapIn">
+    <wsdl:part name="parameters" element="tns:IstrintiStudentoPaskaitaIsStudijuPlano" />
   </wsdl:message>
-  <wsdl:message name="AtnaujintiPaskaitosDataPagalPaskaitosKodaSoapOut">
-    <wsdl:part name="parameters" element="tns:AtnaujintiPaskaitosDataPagalPaskaitosKodaResponse" />
-  </wsdl:message>
-  <wsdl:message name="IstrintiPaskaitaIsStudijuPlanoPagalPaskaitosKodaSoapIn">
-    <wsdl:part name="parameters" element="tns:IstrintiPaskaitaIsStudijuPlanoPagalPaskaitosKoda" />
-  </wsdl:message>
-  <wsdl:message name="IstrintiPaskaitaIsStudijuPlanoPagalPaskaitosKodaSoapOut">
-    <wsdl:part name="parameters" element="tns:IstrintiPaskaitaIsStudijuPlanoPagalPaskaitosKodaResponse" />
+  <wsdl:message name="IstrintiStudentoPaskaitaIsStudijuPlanoSoapOut">
+    <wsdl:part name="parameters" element="tns:IstrintiStudentoPaskaitaIsStudijuPlanoResponse" />
   </wsdl:message>
   <wsdl:portType name="ManoWebServisasSoap">
     <wsdl:operation name="GautiPaskaitas">
@@ -245,10 +203,6 @@
     <wsdl:operation name="AtnaujintiPaskaitosPavadinimaPagalKoda">
       <wsdl:input message="tns:AtnaujintiPaskaitosPavadinimaPagalKodaSoapIn" />
       <wsdl:output message="tns:AtnaujintiPaskaitosPavadinimaPagalKodaSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="IstrintiPaskaitaPagalKoda">
-      <wsdl:input message="tns:IstrintiPaskaitaPagalKodaSoapIn" />
-      <wsdl:output message="tns:IstrintiPaskaitaPagalKodaSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GautiStudentus">
       <wsdl:input message="tns:GautiStudentusSoapIn" />
@@ -266,13 +220,9 @@
       <wsdl:input message="tns:PriskirtiPaskaitaStudentuiSoapIn" />
       <wsdl:output message="tns:PriskirtiPaskaitaStudentuiSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="AtnaujintiPaskaitosDataPagalPaskaitosKoda">
-      <wsdl:input message="tns:AtnaujintiPaskaitosDataPagalPaskaitosKodaSoapIn" />
-      <wsdl:output message="tns:AtnaujintiPaskaitosDataPagalPaskaitosKodaSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="IstrintiPaskaitaIsStudijuPlanoPagalPaskaitosKoda">
-      <wsdl:input message="tns:IstrintiPaskaitaIsStudijuPlanoPagalPaskaitosKodaSoapIn" />
-      <wsdl:output message="tns:IstrintiPaskaitaIsStudijuPlanoPagalPaskaitosKodaSoapOut" />
+    <wsdl:operation name="IstrintiStudentoPaskaitaIsStudijuPlano">
+      <wsdl:input message="tns:IstrintiStudentoPaskaitaIsStudijuPlanoSoapIn" />
+      <wsdl:output message="tns:IstrintiStudentoPaskaitaIsStudijuPlanoSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ManoWebServisasSoap" type="tns:ManoWebServisasSoap">
@@ -297,15 +247,6 @@
     </wsdl:operation>
     <wsdl:operation name="AtnaujintiPaskaitosPavadinimaPagalKoda">
       <soap:operation soapAction="http://ktu.lt/AtnaujintiPaskaitosPavadinimaPagalKoda" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IstrintiPaskaitaPagalKoda">
-      <soap:operation soapAction="http://ktu.lt/IstrintiPaskaitaPagalKoda" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -349,17 +290,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="AtnaujintiPaskaitosDataPagalPaskaitosKoda">
-      <soap:operation soapAction="http://ktu.lt/AtnaujintiPaskaitosDataPagalPaskaitosKoda" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IstrintiPaskaitaIsStudijuPlanoPagalPaskaitosKoda">
-      <soap:operation soapAction="http://ktu.lt/IstrintiPaskaitaIsStudijuPlanoPagalPaskaitosKoda" style="document" />
+    <wsdl:operation name="IstrintiStudentoPaskaitaIsStudijuPlano">
+      <soap:operation soapAction="http://ktu.lt/IstrintiStudentoPaskaitaIsStudijuPlano" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -390,15 +322,6 @@
     </wsdl:operation>
     <wsdl:operation name="AtnaujintiPaskaitosPavadinimaPagalKoda">
       <soap12:operation soapAction="http://ktu.lt/AtnaujintiPaskaitosPavadinimaPagalKoda" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IstrintiPaskaitaPagalKoda">
-      <soap12:operation soapAction="http://ktu.lt/IstrintiPaskaitaPagalKoda" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
@@ -442,17 +365,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="AtnaujintiPaskaitosDataPagalPaskaitosKoda">
-      <soap12:operation soapAction="http://ktu.lt/AtnaujintiPaskaitosDataPagalPaskaitosKoda" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="IstrintiPaskaitaIsStudijuPlanoPagalPaskaitosKoda">
-      <soap12:operation soapAction="http://ktu.lt/IstrintiPaskaitaIsStudijuPlanoPagalPaskaitosKoda" style="document" />
+    <wsdl:operation name="IstrintiStudentoPaskaitaIsStudijuPlano">
+      <soap12:operation soapAction="http://ktu.lt/IstrintiStudentoPaskaitaIsStudijuPlano" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
