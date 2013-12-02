@@ -43,10 +43,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.SelectTab = new System.Windows.Forms.TabPage();
-            this.LabelLaikas = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.LabelDiena = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.UpdateTab = new System.Windows.Forms.TabPage();
             this.DeleteTab = new System.Windows.Forms.TabPage();
             this.GridViewResult = new System.Windows.Forms.DataGridView();
@@ -55,6 +51,11 @@
             this.LabelPriskirtiStudentai = new System.Windows.Forms.Label();
             this.LabelPriskirtiPaskaita = new System.Windows.Forms.Label();
             this.ComboBoxPaskaita = new System.Windows.Forms.ComboBox();
+            this.ComboBoxGautiLaikas = new System.Windows.Forms.ComboBox();
+            this.ComboBoxGautiDiena = new System.Windows.Forms.ComboBox();
+            this.ButtonGautiPaskaita = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.TabControl.SuspendLayout();
             this.InsertTab.SuspendLayout();
             this.AssignTab.SuspendLayout();
@@ -96,9 +97,9 @@
             // 
             this.ButtonPrideti.Location = new System.Drawing.Point(79, 107);
             this.ButtonPrideti.Name = "ButtonPrideti";
-            this.ButtonPrideti.Size = new System.Drawing.Size(75, 23);
+            this.ButtonPrideti.Size = new System.Drawing.Size(100, 23);
             this.ButtonPrideti.TabIndex = 5;
-            this.ButtonPrideti.Text = "Pridėti";
+            this.ButtonPrideti.Text = "Pridėti paskaita";
             this.ButtonPrideti.UseVisualStyleBackColor = true;
             this.ButtonPrideti.Click += new System.EventHandler(this.ButtonPrideti_Click);
             // 
@@ -185,11 +186,11 @@
             // 
             // ButtonPriskirti
             // 
-            this.ButtonPriskirti.Location = new System.Drawing.Point(86, 113);
+            this.ButtonPriskirti.Location = new System.Drawing.Point(93, 111);
             this.ButtonPriskirti.Name = "ButtonPriskirti";
-            this.ButtonPriskirti.Size = new System.Drawing.Size(75, 23);
+            this.ButtonPriskirti.Size = new System.Drawing.Size(97, 23);
             this.ButtonPriskirti.TabIndex = 12;
-            this.ButtonPriskirti.Text = "Priskirti";
+            this.ButtonPriskirti.Text = "Priskirti paskaita";
             this.ButtonPriskirti.UseVisualStyleBackColor = true;
             this.ButtonPriskirti.Click += new System.EventHandler(this.ButtonPriskirti_Click);
             // 
@@ -213,10 +214,11 @@
             // 
             // SelectTab
             // 
-            this.SelectTab.Controls.Add(this.LabelLaikas);
-            this.SelectTab.Controls.Add(this.textBox4);
-            this.SelectTab.Controls.Add(this.LabelDiena);
-            this.SelectTab.Controls.Add(this.textBox3);
+            this.SelectTab.Controls.Add(this.ComboBoxGautiLaikas);
+            this.SelectTab.Controls.Add(this.ComboBoxGautiDiena);
+            this.SelectTab.Controls.Add(this.ButtonGautiPaskaita);
+            this.SelectTab.Controls.Add(this.label3);
+            this.SelectTab.Controls.Add(this.label4);
             this.SelectTab.Location = new System.Drawing.Point(4, 22);
             this.SelectTab.Name = "SelectTab";
             this.SelectTab.Padding = new System.Windows.Forms.Padding(3);
@@ -224,38 +226,6 @@
             this.SelectTab.TabIndex = 1;
             this.SelectTab.Text = "Gauti";
             this.SelectTab.UseVisualStyleBackColor = true;
-            // 
-            // LabelLaikas
-            // 
-            this.LabelLaikas.AutoSize = true;
-            this.LabelLaikas.Location = new System.Drawing.Point(112, 77);
-            this.LabelLaikas.Name = "LabelLaikas";
-            this.LabelLaikas.Size = new System.Drawing.Size(41, 13);
-            this.LabelLaikas.TabIndex = 6;
-            this.LabelLaikas.Text = "Laikas:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(182, 42);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(103, 20);
-            this.textBox4.TabIndex = 7;
-            // 
-            // LabelDiena
-            // 
-            this.LabelDiena.AutoSize = true;
-            this.LabelDiena.Location = new System.Drawing.Point(112, 42);
-            this.LabelDiena.Name = "LabelDiena";
-            this.LabelDiena.Size = new System.Drawing.Size(38, 13);
-            this.LabelDiena.TabIndex = 2;
-            this.LabelDiena.Text = "Diena:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(182, 77);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(103, 20);
-            this.textBox3.TabIndex = 5;
             // 
             // UpdateTab
             // 
@@ -279,13 +249,12 @@
             // 
             this.GridViewResult.AllowUserToAddRows = false;
             this.GridViewResult.AllowUserToDeleteRows = false;
-            this.GridViewResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.GridViewResult.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.GridViewResult.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.GridViewResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.GridViewResult.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.GridViewResult.Location = new System.Drawing.Point(16, 218);
             this.GridViewResult.Name = "GridViewResult";
-            this.GridViewResult.Size = new System.Drawing.Size(573, 161);
+            this.GridViewResult.Size = new System.Drawing.Size(611, 161);
             this.GridViewResult.TabIndex = 1;
             // 
             // ErrorProvider
@@ -330,11 +299,71 @@
             this.ComboBoxPaskaita.TabIndex = 3;
             this.ComboBoxPaskaita.Visible = false;
             // 
+            // ComboBoxGautiLaikas
+            // 
+            this.ComboBoxGautiLaikas.FormattingEnabled = true;
+            this.ComboBoxGautiLaikas.Items.AddRange(new object[] {
+            "8:30-10:00",
+            "10:30-12:00",
+            "13:00-14:30",
+            "15:00-16:30",
+            "17:00-18:30"});
+            this.ComboBoxGautiLaikas.Location = new System.Drawing.Point(81, 74);
+            this.ComboBoxGautiLaikas.Name = "ComboBoxGautiLaikas";
+            this.ComboBoxGautiLaikas.Size = new System.Drawing.Size(121, 21);
+            this.ComboBoxGautiLaikas.TabIndex = 19;
+            this.ComboBoxGautiLaikas.Text = "08:30-10:00";
+            // 
+            // ComboBoxGautiDiena
+            // 
+            this.ComboBoxGautiDiena.FormattingEnabled = true;
+            this.ComboBoxGautiDiena.Items.AddRange(new object[] {
+            "Pirmadienis",
+            "Antradienis",
+            "Trečiadienis",
+            "Ketvirtadienis",
+            "Penktadienis"});
+            this.ComboBoxGautiDiena.Location = new System.Drawing.Point(81, 26);
+            this.ComboBoxGautiDiena.Name = "ComboBoxGautiDiena";
+            this.ComboBoxGautiDiena.Size = new System.Drawing.Size(121, 21);
+            this.ComboBoxGautiDiena.TabIndex = 18;
+            this.ComboBoxGautiDiena.Text = "Pirmadienis";
+            // 
+            // ButtonGautiPaskaita
+            // 
+            this.ButtonGautiPaskaita.Location = new System.Drawing.Point(93, 112);
+            this.ButtonGautiPaskaita.Name = "ButtonGautiPaskaita";
+            this.ButtonGautiPaskaita.Size = new System.Drawing.Size(97, 23);
+            this.ButtonGautiPaskaita.TabIndex = 17;
+            this.ButtonGautiPaskaita.Text = "Gauti paskaita";
+            this.ButtonGautiPaskaita.UseVisualStyleBackColor = true;
+            this.ButtonGautiPaskaita.Click += new System.EventHandler(this.ButtonGautiPaskaita_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(78, 58);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(83, 13);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Pasirinkite laiką:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(78, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 13);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Pasirinkite dieną:";
+            // 
             // WebServiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(601, 391);
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ClientSize = new System.Drawing.Size(639, 391);
             this.Controls.Add(this.ComboBoxPaskaita);
             this.Controls.Add(this.GridViewResult);
             this.Controls.Add(this.LabelPriskirtiPaskaita);
@@ -342,6 +371,7 @@
             this.Controls.Add(this.LabelPriskirtiStudentai);
             this.Controls.Add(this.ComboBoxStudentas);
             this.Name = "WebServiceForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "  ";
             this.TabControl.ResumeLayout(false);
             this.InsertTab.ResumeLayout(false);
@@ -370,10 +400,6 @@
         private System.Windows.Forms.Label LabelPavadinimas;
         private System.Windows.Forms.Label LabelKodas;
         private System.Windows.Forms.TabPage AssignTab;
-        private System.Windows.Forms.Label LabelDiena;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label LabelLaikas;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button ButtonPrideti;
         private System.Windows.Forms.ErrorProvider ErrorProvider;
         private System.Windows.Forms.ComboBox ComboBoxPaskaita;
@@ -385,6 +411,11 @@
         private System.Windows.Forms.Button ButtonPriskirti;
         private System.Windows.Forms.ComboBox ComboBoxPriskirtiDiena;
         private System.Windows.Forms.ComboBox ComboBoxPriskirtiLaikas;
+        private System.Windows.Forms.ComboBox ComboBoxGautiLaikas;
+        private System.Windows.Forms.ComboBox ComboBoxGautiDiena;
+        private System.Windows.Forms.Button ButtonGautiPaskaita;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 

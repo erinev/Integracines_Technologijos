@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Windows.Forms;
@@ -94,6 +95,31 @@ namespace WebServisoClientas
             }
         }
 
+        private void ButtonGautiPaskaita_Click(object sender, EventArgs e)
+        {
+            string diena = ComboBoxGautiDiena.Text.Trim();
+            string laikas = ComboBoxGautiLaikas.Text.Trim();
+            var studentoId = (string) ComboBoxStudentas.SelectedValue;
+
+            string paskaitosPavadinimas = _soapClient.GautiPaskaitaPagalLaikaIrStudentoId(diena, laikas, studentoId);
+
+            if (!string.IsNullOrEmpty(paskaitosPavadinimas))
+            {
+                var list = new List<Wrapper>
+                {
+                    new Wrapper
+                    {
+                        Pavadinimas = paskaitosPavadinimas
+                    }
+                };
+                GridViewResult.DataSource = list;
+            }
+            else
+            {
+                MessageBox.Show(Resources.ButtonPridetiClick_PaskaitosPridetiNepavyko);
+            }
+        }
+
         private void TextBoxInsertPaskaitosKodas_Validating(object sender, CancelEventArgs e)
         {
             if (TextBoxInsertPaskaitosKodas.Text.Trim() == String.Empty)
@@ -128,6 +154,7 @@ namespace WebServisoClientas
                 ComboBoxPaskaita.Visible = false;
                 LabelPriskirtiStudentai.Visible = false;
                 ComboBoxStudentas.Visible = false;
+                FillGridView();
             }
             else if (e.TabPage == AssignTab)
             {
@@ -135,11 +162,12 @@ namespace WebServisoClientas
                 ComboBoxPaskaita.Visible = true;
                 LabelPriskirtiStudentai.Visible = true;
                 ComboBoxStudentas.Visible = true;
+                FillGridView();
             }
             else if (e.TabPage == SelectTab)
             {
-                LabelPriskirtiPaskaita.Visible = true;
-                ComboBoxPaskaita.Visible = true;
+                LabelPriskirtiPaskaita.Visible = false;
+                ComboBoxPaskaita.Visible = false;
                 LabelPriskirtiStudentai.Visible = true;
                 ComboBoxStudentas.Visible = true;
             }
@@ -149,6 +177,7 @@ namespace WebServisoClientas
                 ComboBoxPaskaita.Visible = true;
                 LabelPriskirtiStudentai.Visible = false;
                 ComboBoxStudentas.Visible = false;
+                FillGridView();
             }
             else if (e.TabPage == DeleteTab)
             {
@@ -156,6 +185,7 @@ namespace WebServisoClientas
                 ComboBoxPaskaita.Visible = true;
                 LabelPriskirtiStudentai.Visible = true;
                 ComboBoxStudentas.Visible = true;
+                FillGridView();
             }
             else
             {
@@ -163,7 +193,13 @@ namespace WebServisoClientas
                 ComboBoxPaskaita.Visible = false;
                 LabelPriskirtiStudentai.Visible = false;
                 ComboBoxStudentas.Visible = false;
+                FillGridView();
             }
         }
+    }
+
+    internal class Wrapper
+    {
+        public string Pavadinimas { get; set; }
     }
 }
