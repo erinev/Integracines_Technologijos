@@ -61,6 +61,15 @@ namespace WebServisoClientas.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Paskaitos rasti nepavyko!.
+        /// </summary>
+        internal static string ButtonGautiPaskaitaClick_PaskaitosRastiNepavyko {
+            get {
+                return ResourceManager.GetString("ButtonGautiPaskaitaClick_PaskaitosRastiNepavyko", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Paskaita pridėta sėkmingai.
         /// </summary>
         internal static string ButtonPridetiClick_PaskaitaPridėtaSekmingai {
@@ -75,6 +84,42 @@ namespace WebServisoClientas.Properties {
         internal static string ButtonPridetiClick_PaskaitosPridetiNepavyko {
             get {
                 return ResourceManager.GetString("ButtonPridetiClick_PaskaitosPridetiNepavyko", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nepavyko priskirti paskaitos studentui!.
+        /// </summary>
+        internal static string ButtonPriskirtiClick_NepavykoPriskirtiPaskaitos {
+            get {
+                return ResourceManager.GetString("ButtonPriskirtiClick_NepavykoPriskirtiPaskaitos", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Paskaita sėkmingai priskirta studentui.
+        /// </summary>
+        internal static string ButtonPriskirtiClick_PaskaitaPriskirtaStudentui {
+            get {
+                return ResourceManager.GetString("ButtonPriskirtiClick_PaskaitaPriskirtaStudentui", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Įvesti paskaitos kodą privaloma!.
+        /// </summary>
+        internal static string TextBoxInsertPaskaitosKodasValidating_KodasPrivalomas {
+            get {
+                return ResourceManager.GetString("TextBoxInsertPaskaitosKodasValidating_KodasPrivalomas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Įvesti pavadinimą privaloma!.
+        /// </summary>
+        internal static string TextBoxInsertPaskaitosKodasValidating_PavadinimasPrivalomas {
+            get {
+                return ResourceManager.GetString("TextBoxInsertPaskaitosKodasValidating_PavadinimasPrivalomas", resourceCulture);
             }
         }
     }

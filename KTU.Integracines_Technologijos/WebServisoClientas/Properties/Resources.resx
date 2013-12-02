@@ -123,4 +123,19 @@
   <data name="ButtonPridetiClick_PaskaitosPridetiNepavyko" xml:space="preserve">
     <value>Paskaitos pridėti nepavyko</value>
   </data>
+  <data name="TextBoxInsertPaskaitosKodasValidating_KodasPrivalomas" xml:space="preserve">
+    <value>Įvesti paskaitos kodą privaloma!</value>
+  </data>
+  <data name="TextBoxInsertPaskaitosKodasValidating_PavadinimasPrivalomas" xml:space="preserve">
+    <value>Įvesti pavadinimą privaloma!</value>
+  </data>
+  <data name="ButtonPriskirtiClick_PaskaitaPriskirtaStudentui" xml:space="preserve">
+    <value>Paskaita sėkmingai priskirta studentui</value>
+  </data>
+  <data name="ButtonPriskirtiClick_NepavykoPriskirtiPaskaitos" xml:space="preserve">
+    <value>Nepavyko priskirti paskaitos studentui!</value>
+  </data>
+  <data name="ButtonGautiPaskaitaClick_PaskaitosRastiNepavyko" xml:space="preserve">
+    <value>Paskaitos rasti nepavyko!</value>
+  </data>
 </root>

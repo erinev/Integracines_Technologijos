@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Windows.Forms;
@@ -14,12 +13,13 @@ namespace WebServisoClientas
 
         public WebServiceForm()
         {
-            InitializeComponent();
+            this.InitializeComponent();
 
             _soapClient = new ManoWebServisasSoapClient();
-            FillGridView();
-            FillStudentaiComboBox();
-            FillPaskaitosComboBox();
+
+            this.FillGridView();
+            this.FillStudentaiComboBox();
+            this.FillPaskaitosComboBox();
         }
 
         private void FillGridView()
@@ -49,16 +49,18 @@ namespace WebServisoClientas
 
         private void ButtonPrideti_Click(object sender, EventArgs e)
         {
-            string kodas = TextBoxInsertPaskaitosKodas.Text;
-            string pavadinimas = TextBoxInsertPaskaitosPavadinimas.Text;
+            string kodas = TextBoxInsertPaskaitosKodas.Text.Trim(' ');
+            string pavadinimas = TextBoxInsertPaskaitosPavadinimas.Text.Trim(' ');
 
-            if (kodas.Trim() == string.Empty)
+            if (kodas == string.Empty)
             {
-                ErrorProvider.SetError(TextBoxInsertPaskaitosKodas, "Paskaitos kodas privalomas!");
+                ErrorProvider.SetError(TextBoxInsertPaskaitosKodas,
+                    Resources.TextBoxInsertPaskaitosKodasValidating_KodasPrivalomas);
             }
-            else if (pavadinimas.Trim() == string.Empty)
+            else if (pavadinimas == string.Empty)
             {
-                ErrorProvider.SetError(TextBoxInsertPaskaitosPavadinimas, "Paskaitos pavadinimas privalomas!");
+                ErrorProvider.SetError(TextBoxInsertPaskaitosPavadinimas,
+                    Resources.TextBoxInsertPaskaitosKodasValidating_PavadinimasPrivalomas);
             }
             else
             {
@@ -66,7 +68,7 @@ namespace WebServisoClientas
                 if (insertedRow > 0)
                 {
                     MessageBox.Show(Resources.ButtonPridetiClick_PaskaitaPridėtaSekmingai);
-                    FillPaskaitosComboBox();
+                    this.FillPaskaitosComboBox();
                 }
                 else
                 {
@@ -82,41 +84,37 @@ namespace WebServisoClientas
             var studentoId = (string) ComboBoxStudentas.SelectedValue;
             var paskaitosKodas = (string) ComboBoxPaskaita.SelectedValue;
 
-            int insertedRow = _soapClient.PriskirtiPaskaitaStudentui(studentoId.Trim(), paskaitosKodas.Trim(), diena,
-                laikas);
+            int insertedRow = _soapClient.PriskirtiPaskaitaStudentui(studentoId, paskaitosKodas, diena, laikas);
             if (insertedRow > 0)
             {
-                MessageBox.Show(Resources.ButtonPridetiClick_PaskaitaPridėtaSekmingai);
-                FillGridView();
+                MessageBox.Show(Resources.ButtonPriskirtiClick_PaskaitaPriskirtaStudentui);
+                this.FillGridView();
             }
             else
             {
-                MessageBox.Show(Resources.ButtonPridetiClick_PaskaitosPridetiNepavyko);
+                MessageBox.Show(Resources.ButtonPriskirtiClick_NepavykoPriskirtiPaskaitos);
             }
         }
 
         private void ButtonGautiPaskaita_Click(object sender, EventArgs e)
         {
-            string diena = ComboBoxGautiDiena.Text.Trim();
-            string laikas = ComboBoxGautiLaikas.Text.Trim();
+            string diena = ComboBoxGautiDiena.Text;
+            string laikas = ComboBoxGautiLaikas.Text;
             var studentoId = (string) ComboBoxStudentas.SelectedValue;
 
             string paskaitosPavadinimas = _soapClient.GautiPaskaitaPagalLaikaIrStudentoId(diena, laikas, studentoId);
-
             if (!string.IsNullOrEmpty(paskaitosPavadinimas))
             {
-                var list = new List<Wrapper>
-                {
-                    new Wrapper
-                    {
-                        Pavadinimas = paskaitosPavadinimas
-                    }
-                };
-                GridViewResult.DataSource = list;
+                var pavadinimasTable = new DataTable();
+
+                pavadinimasTable.Columns.Add("Pavadinimas");
+                pavadinimasTable.Rows.Add(new object[] {paskaitosPavadinimas.TrimEnd(' ')});
+
+                GridViewResult.DataSource = pavadinimasTable;
             }
             else
             {
-                MessageBox.Show(Resources.ButtonPridetiClick_PaskaitosPridetiNepavyko);
+                MessageBox.Show(Resources.ButtonGautiPaskaitaClick_PaskaitosRastiNepavyko);
             }
         }
 
@@ -125,7 +123,8 @@ namespace WebServisoClientas
             if (TextBoxInsertPaskaitosKodas.Text.Trim() == String.Empty)
             {
                 e.Cancel = true;
-                ErrorProvider.SetError(TextBoxInsertPaskaitosKodas, "Paskaitos kodas privalomas!");
+                ErrorProvider.SetError(TextBoxInsertPaskaitosKodas,
+                    Resources.TextBoxInsertPaskaitosKodasValidating_KodasPrivalomas);
             }
             else
             {
@@ -138,7 +137,8 @@ namespace WebServisoClientas
             if (TextBoxInsertPaskaitosPavadinimas.Text.Trim() == String.Empty)
             {
                 e.Cancel = true;
-                ErrorProvider.SetError(TextBoxInsertPaskaitosPavadinimas, "Paskaitos pavadinimas privalomas!");
+                ErrorProvider.SetError(TextBoxInsertPaskaitosPavadinimas,
+                    Resources.TextBoxInsertPaskaitosKodasValidating_PavadinimasPrivalomas);
             }
             else
             {
@@ -196,10 +196,5 @@ namespace WebServisoClientas
                 FillGridView();
             }
         }
-    }
-
-    internal class Wrapper
-    {
-        public string Pavadinimas { get; set; }
     }
 }
