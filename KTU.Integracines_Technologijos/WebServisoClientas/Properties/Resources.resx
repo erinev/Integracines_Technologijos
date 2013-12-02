@@ -121,7 +121,7 @@
     <value>Paskaita pridėta sėkmingai</value>
   </data>
   <data name="ButtonPridetiClick_PaskaitosPridetiNepavyko" xml:space="preserve">
-    <value>Paskaitos pridėti nepavyko</value>
+    <value>Paskaitos pridėti nepavyko!</value>
   </data>
   <data name="TextBoxInsertPaskaitosKodasValidating_KodasPrivalomas" xml:space="preserve">
     <value>Įvesti paskaitos kodą privaloma!</value>
@@ -137,5 +137,14 @@
   </data>
   <data name="ButtonGautiPaskaitaClick_PaskaitosRastiNepavyko" xml:space="preserve">
     <value>Paskaitos rasti nepavyko!</value>
+  </data>
+  <data name="ButtonAtnaujintiClick_NepavykoAtnaujintiPavadinimo" xml:space="preserve">
+    <value>Nepavyko atnaujinti pavadinimo!</value>
+  </data>
+  <data name="ButtonAtnaujintiClick_PaskaitosPavadinimasAtnaujintas" xml:space="preserve">
+    <value>Paskaitos pavadinimas pakeistas</value>
+  </data>
+  <data name="TextBoxAtnaujintiValidating_PavadinimasPrivalomas" xml:space="preserve">
+    <value>Pavadinimas negali būti tuščias!</value>
   </data>
 </root>

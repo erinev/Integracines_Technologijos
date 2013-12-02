@@ -61,6 +61,24 @@ namespace WebServisoClientas.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nepavyko atnaujinti pavadinimo!.
+        /// </summary>
+        internal static string ButtonAtnaujintiClick_NepavykoAtnaujintiPavadinimo {
+            get {
+                return ResourceManager.GetString("ButtonAtnaujintiClick_NepavykoAtnaujintiPavadinimo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Paskaitos pavadinimas pakeistas.
+        /// </summary>
+        internal static string ButtonAtnaujintiClick_PaskaitosPavadinimasAtnaujintas {
+            get {
+                return ResourceManager.GetString("ButtonAtnaujintiClick_PaskaitosPavadinimasAtnaujintas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Paskaitos rasti nepavyko!.
         /// </summary>
         internal static string ButtonGautiPaskaitaClick_PaskaitosRastiNepavyko {
@@ -79,7 +97,7 @@ namespace WebServisoClientas.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Paskaitos pridėti nepavyko.
+        ///   Looks up a localized string similar to Paskaitos pridėti nepavyko!.
         /// </summary>
         internal static string ButtonPridetiClick_PaskaitosPridetiNepavyko {
             get {
@@ -102,6 +120,15 @@ namespace WebServisoClientas.Properties {
         internal static string ButtonPriskirtiClick_PaskaitaPriskirtaStudentui {
             get {
                 return ResourceManager.GetString("ButtonPriskirtiClick_PaskaitaPriskirtaStudentui", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pavadinimas negali būti tuščias!.
+        /// </summary>
+        internal static string TextBoxAtnaujintiValidating_PavadinimasPrivalomas {
+            get {
+                return ResourceManager.GetString("TextBoxAtnaujintiValidating_PavadinimasPrivalomas", resourceCulture);
             }
         }
         

@@ -49,6 +49,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.UpdateTab = new System.Windows.Forms.TabPage();
+            this.ButtonAtnaujinti = new System.Windows.Forms.Button();
+            this.TextBoxAtnaujinti = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.DeleteTab = new System.Windows.Forms.TabPage();
             this.GridViewResult = new System.Windows.Forms.DataGridView();
@@ -289,6 +291,8 @@
             // 
             // UpdateTab
             // 
+            this.UpdateTab.Controls.Add(this.ButtonAtnaujinti);
+            this.UpdateTab.Controls.Add(this.TextBoxAtnaujinti);
             this.UpdateTab.Controls.Add(this.label5);
             this.UpdateTab.Location = new System.Drawing.Point(4, 22);
             this.UpdateTab.Name = "UpdateTab";
@@ -297,14 +301,33 @@
             this.UpdateTab.Text = "Pakeisti paskaita";
             this.UpdateTab.UseVisualStyleBackColor = true;
             // 
+            // ButtonAtnaujinti
+            // 
+            this.ButtonAtnaujinti.Location = new System.Drawing.Point(161, 72);
+            this.ButtonAtnaujinti.Name = "ButtonAtnaujinti";
+            this.ButtonAtnaujinti.Size = new System.Drawing.Size(112, 23);
+            this.ButtonAtnaujinti.TabIndex = 4;
+            this.ButtonAtnaujinti.Text = "Atnaujinti paskaita";
+            this.ButtonAtnaujinti.UseVisualStyleBackColor = true;
+            this.ButtonAtnaujinti.Click += new System.EventHandler(this.ButtonAtnaujinti_Click);
+            // 
+            // TextBoxAtnaujinti
+            // 
+            this.TextBoxAtnaujinti.Location = new System.Drawing.Point(201, 28);
+            this.TextBoxAtnaujinti.MaxLength = 50;
+            this.TextBoxAtnaujinti.Name = "TextBoxAtnaujinti";
+            this.TextBoxAtnaujinti.Size = new System.Drawing.Size(135, 20);
+            this.TextBoxAtnaujinti.TabIndex = 3;
+            this.TextBoxAtnaujinti.Validating += new System.ComponentModel.CancelEventHandler(this.TextBoxAtnaujinti_Validating);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 24);
+            this.label5.Location = new System.Drawing.Point(89, 28);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "label5";
+            this.label5.Size = new System.Drawing.Size(105, 13);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Naujas pavadinimas:";
             // 
             // DeleteTab
             // 
@@ -431,6 +454,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button ButtonAtnaujinti;
+        private System.Windows.Forms.TextBox TextBoxAtnaujinti;
     }
 }
 

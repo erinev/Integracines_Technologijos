@@ -118,9 +118,35 @@ namespace WebServisoClientas
             }
         }
 
+        private void ButtonAtnaujinti_Click(object sender, EventArgs e)
+        {
+            string naujasPavadinimas = TextBoxAtnaujinti.Text.Trim(' ');
+            var paskaitosKodas = (string) ComboBoxPaskaita.SelectedValue;
+
+            if (naujasPavadinimas == string.Empty)
+            {
+                ErrorProvider.SetError(TextBoxAtnaujinti,
+                    Resources.TextBoxAtnaujintiValidating_PavadinimasPrivalomas);
+            }
+            else
+            {
+                int updatedRow = _soapClient.AtnaujintiPaskaitosPavadinimaPagalKoda(naujasPavadinimas, paskaitosKodas);
+                if (updatedRow > 0)
+                {
+                    MessageBox.Show(Resources.ButtonAtnaujintiClick_PaskaitosPavadinimasAtnaujintas);
+                    this.FillPaskaitosComboBox();
+                    this.FillGridView();
+                }
+                else
+                {
+                    MessageBox.Show(Resources.ButtonAtnaujintiClick_NepavykoAtnaujintiPavadinimo);
+                }
+            }
+        }
+
         private void TextBoxInsertPaskaitosKodas_Validating(object sender, CancelEventArgs e)
         {
-            if (TextBoxInsertPaskaitosKodas.Text.Trim() == String.Empty)
+            if (TextBoxInsertPaskaitosKodas.Text.Trim(' ') == String.Empty)
             {
                 e.Cancel = true;
                 ErrorProvider.SetError(TextBoxInsertPaskaitosKodas,
@@ -134,7 +160,7 @@ namespace WebServisoClientas
 
         private void TextBoxInsertPaskaitosPavadinimas_Validating(object sender, CancelEventArgs e)
         {
-            if (TextBoxInsertPaskaitosPavadinimas.Text.Trim() == String.Empty)
+            if (TextBoxInsertPaskaitosPavadinimas.Text.Trim(' ') == String.Empty)
             {
                 e.Cancel = true;
                 ErrorProvider.SetError(TextBoxInsertPaskaitosPavadinimas,
@@ -143,6 +169,19 @@ namespace WebServisoClientas
             else
             {
                 ErrorProvider.SetError(TextBoxInsertPaskaitosPavadinimas, null);
+            }
+        }
+
+        private void TextBoxAtnaujinti_Validating(object sender, CancelEventArgs e)
+        {
+            if (TextBoxAtnaujinti.Text.Trim(' ') == String.Empty)
+            {
+                e.Cancel = true;
+                ErrorProvider.SetError(TextBoxAtnaujinti, Resources.TextBoxAtnaujintiValidating_PavadinimasPrivalomas);
+            }
+            else
+            {
+                ErrorProvider.SetError(TextBoxAtnaujinti, null);
             }
         }
 
