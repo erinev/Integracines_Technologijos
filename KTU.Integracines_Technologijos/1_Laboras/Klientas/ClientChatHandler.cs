@@ -5,25 +5,21 @@ using System.Threading;
 
 namespace Klientas
 {
-    public class ClientChat
+    public class ClientChatHandler
     {
-        private NetworkStream _networkStream;
-
         public void StartChat(NetworkStream networkStream)
         {
-            _networkStream = networkStream;
-
-            var readThread = new Thread(ReadChat);
+            var streamReader = new StreamReader(networkStream);
+            var readThread = new Thread(() => ReadChat(streamReader));
             readThread.Start();
 
-            var writeThread = new Thread(WriteToChat);
+            var streamWriter = new StreamWriter(networkStream);
+            var writeThread = new Thread(() => WriteToChat(streamWriter));
             writeThread.Start();
         }
 
-        private void ReadChat()
+        private void ReadChat(StreamReader streamReader)
         {
-            var streamReader = new StreamReader(_networkStream);
-
             while (true)
             {
                 string message = streamReader.ReadLine();
@@ -31,14 +27,12 @@ namespace Klientas
             }
         }
 
-        private void WriteToChat()
+        private void WriteToChat(StreamWriter streamWriter)
         {
-            var streamWriter = new StreamWriter(_networkStream);
-
             while (true)
             {
-                string zinute = Console.ReadLine();
-                streamWriter.WriteLine(zinute);
+                string message = Console.ReadLine();
+                streamWriter.WriteLine(message);
                 streamWriter.Flush();
             }
         }

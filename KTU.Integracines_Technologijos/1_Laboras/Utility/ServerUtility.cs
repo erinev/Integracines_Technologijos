@@ -20,9 +20,10 @@ namespace Utility
             return serverSocket;
         }
 
-        public void StartServerSocket()
+        public TcpListener StartServerSocket()
         {
             _serverSocket.Start();
+            return _serverSocket;
         }
 
         public void CloseServerSocket()
@@ -56,7 +57,7 @@ namespace Utility
             return networkStream;
         }
 
-        public TcpClient CreateClientSocket()
+        private TcpClient CreateClientSocket()
         {
             _serverSocket.Start();
             TcpClient clientSocket = _serverSocket.AcceptTcpClient();

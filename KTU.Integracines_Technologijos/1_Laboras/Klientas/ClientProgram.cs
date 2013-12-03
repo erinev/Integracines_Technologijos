@@ -3,15 +3,15 @@ using Utility;
 
 namespace Klientas
 {
-    internal static class KlientasProgram
+    internal static class ClientProgram
     {
         private static void Main()
         {
             var clientUtility = new ClientUtility();
-            var clientChat = new ClientChat();
+            var chatHandler = new ClientChatHandler();
 
             NetworkStream networkStream = clientUtility.CreateNetworkStreamForClient();
-            clientChat.StartChat(networkStream);
+            chatHandler.StartChat(networkStream);
         }
     }
 }

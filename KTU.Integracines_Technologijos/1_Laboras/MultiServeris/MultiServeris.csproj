@@ -38,8 +38,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MultiClientHandler.cs" />
-    <Compile Include="MultiServerisProgram.cs" />
+    <Compile Include="ClientHandler.cs" />
+    <Compile Include="ServerChatHandler.cs" />
+    <Compile Include="MultiServerProgram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
