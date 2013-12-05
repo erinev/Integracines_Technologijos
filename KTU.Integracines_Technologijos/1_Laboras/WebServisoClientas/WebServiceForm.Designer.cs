@@ -53,15 +53,15 @@
             this.TextBoxAtnaujinti = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.DeleteTab = new System.Windows.Forms.TabPage();
+            this.ButtonIstrinti = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.GridViewResult = new System.Windows.Forms.DataGridView();
             this.ErrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ComboBoxStudentas = new System.Windows.Forms.ComboBox();
             this.LabelPriskirtiStudentai = new System.Windows.Forms.Label();
             this.LabelPriskirtiPaskaita = new System.Windows.Forms.Label();
             this.ComboBoxPaskaita = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.ButtonIstrinti = new System.Windows.Forms.Button();
             this.TabControl.SuspendLayout();
             this.InsertTab.SuspendLayout();
             this.AssignTab.SuspendLayout();
@@ -345,6 +345,34 @@
             this.DeleteTab.Text = "Ištrinti paskaita";
             this.DeleteTab.UseVisualStyleBackColor = true;
             // 
+            // ButtonIstrinti
+            // 
+            this.ButtonIstrinti.Location = new System.Drawing.Point(296, 90);
+            this.ButtonIstrinti.Name = "ButtonIstrinti";
+            this.ButtonIstrinti.Size = new System.Drawing.Size(135, 23);
+            this.ButtonIstrinti.TabIndex = 2;
+            this.ButtonIstrinti.Text = "Ištrinti studento paskaitą";
+            this.ButtonIstrinti.UseVisualStyleBackColor = true;
+            this.ButtonIstrinti.Click += new System.EventHandler(this.ButtonIstrinti_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(182, 64);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(102, 13);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Pasirinkite studentą:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(182, 24);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(101, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Pasirinkite paskaitą:";
+            // 
             // GridViewResult
             // 
             this.GridViewResult.AllowUserToAddRows = false;
@@ -354,7 +382,7 @@
             this.GridViewResult.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.GridViewResult.Location = new System.Drawing.Point(9, 218);
             this.GridViewResult.Name = "GridViewResult";
-            this.GridViewResult.Size = new System.Drawing.Size(599, 161);
+            this.GridViewResult.Size = new System.Drawing.Size(682, 161);
             this.GridViewResult.TabIndex = 1;
             // 
             // ErrorProvider
@@ -399,41 +427,13 @@
             this.ComboBoxPaskaita.TabIndex = 3;
             this.ComboBoxPaskaita.Visible = false;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(182, 24);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Pasirinkite paskaitą:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(182, 64);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(102, 13);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Pasirinkite studentą:";
-            // 
-            // ButtonIstrinti
-            // 
-            this.ButtonIstrinti.Location = new System.Drawing.Point(296, 90);
-            this.ButtonIstrinti.Name = "ButtonIstrinti";
-            this.ButtonIstrinti.Size = new System.Drawing.Size(135, 23);
-            this.ButtonIstrinti.TabIndex = 2;
-            this.ButtonIstrinti.Text = "Ištrinti studento paskaitą";
-            this.ButtonIstrinti.UseVisualStyleBackColor = true;
-            this.ButtonIstrinti.Click += new System.EventHandler(this.ButtonIstrinti_Click);
-            // 
             // WebServiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(630, 391);
+            this.ClientSize = new System.Drawing.Size(703, 391);
             this.Controls.Add(this.ComboBoxPaskaita);
             this.Controls.Add(this.GridViewResult);
             this.Controls.Add(this.LabelPriskirtiPaskaita);

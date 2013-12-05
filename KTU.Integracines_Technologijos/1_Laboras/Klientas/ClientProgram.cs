@@ -1,4 +1,5 @@
-﻿using System.Net.Sockets;
+﻿using System;
+using System.Net.Sockets;
 using Utility;
 
 namespace Klientas
@@ -12,6 +13,7 @@ namespace Klientas
 
             NetworkStream networkStream = clientUtility.CreateNetworkStreamForClient();
             chatHandler.StartChat(networkStream);
+            Console.WriteLine("Klientas paleistas.");
         }
     }
 }

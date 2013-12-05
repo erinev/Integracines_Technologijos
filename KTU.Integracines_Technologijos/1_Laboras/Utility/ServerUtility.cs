@@ -24,10 +24,5 @@ namespace Utility
             _serverSocket.Start();
             return _serverSocket;
         }
-
-        public void CloseServerSocket()
-        {
-            _serverSocket.Stop();
-        }
     }
 }
