@@ -38,7 +38,6 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientHandler.cs" />
     <Compile Include="ServerChatHandler.cs" />
     <Compile Include="MultiServerProgram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -6,15 +6,22 @@ namespace MultiServeris
 {
     internal static class MultiServerProgram
     {
-        static void Main()
+        private static void Main()
         {
             var serverUtility = new ServerUtility();
-            var chatHandler = new ServerChatHandler();
+            var serverChat = new ServerChatHandler();
 
             TcpListener serverSocket = serverUtility.StartServerSocket();
             Console.WriteLine("Serveris paleistas. Laukiama klientu...");
 
-            chatHandler.HandleClients(serverSocket);
+            TcpClient firstClient = serverSocket.AcceptTcpClient();
+            Console.WriteLine("Priimtas pirmas klientas, laukiamas antras...");
+
+            TcpClient secondClient = serverSocket.AcceptTcpClient();
+            Console.WriteLine("Priimtas antras klientas, susirašinėjimas paleistas.");
+
+            serverChat.StartChat(firstClient, secondClient);
+            serverChat.StartChat(secondClient, firstClient);
         }
     }
 }

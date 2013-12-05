@@ -1,25 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.IO;
 using System.Net.Sockets;
-using Utility;
+using System.Threading;
 
 namespace MultiServeris
 {
     public class ServerChatHandler
     {
-        public void HandleClients(TcpListener serverSocket)
+        public void StartChat(TcpClient firstClient, TcpClient secondClient)
         {
-            var clients = new List<TcpClient>(ConstantsUtility.ClientCount);
-            for (int i = 0; i < clients.Capacity; i++)
-            {
-                TcpClient client = serverSocket.AcceptTcpClient();
-                clients.Add(client);
-                Console.WriteLine("Priimtas {0} klientas, laukiama {1} kliento", ++i, ++i);
-            }
-            Console.WriteLine("Klientai priimti, galima pradėti susirašinėjimą!");
+            NetworkStream firstNetworkStream = firstClient.GetStream();
+            NetworkStream secondNetworkStream = secondClient.GetStream();
 
-            var clientHandler = new ClientHandler();
-            clientHandler.StartChat(clients);
+            var firstClientThread = new Thread(() => ProccessFirstChat(secondNetworkStream, firstNetworkStream));
+            firstClientThread.Start();
+
+            var secondClientThread = new Thread(() => ProccessSecondChat(firstNetworkStream, secondNetworkStream));
+            secondClientThread.Start();
+        }
+
+        private void ProccessFirstChat(NetworkStream secondNetworkStream, NetworkStream firstNetworkStream)
+        {
+            var streamReader = new StreamReader(secondNetworkStream);
+            var streamWriter = new StreamWriter(firstNetworkStream);
+
+            while (true)
+            {
+                string message = streamReader.ReadLine();
+                streamWriter.WriteLine("Klientas_2: {0}", message);
+                streamWriter.Flush();
+            }
+        }
+
+        private void ProccessSecondChat(NetworkStream firstNetworkStream, NetworkStream secondNetworkStream)
+        {
+            var streamReader = new StreamReader(firstNetworkStream);
+            var streamWriter = new StreamWriter(secondNetworkStream);
+
+            while (true)
+            {
+                string message = streamReader.ReadLine();
+                streamWriter.WriteLine("Klientas_1: {0}", message);
+                streamWriter.Flush();
+            }
         }
     }
 }
