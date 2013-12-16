@@ -35,8 +35,8 @@ namespace XmlParser.Parser
                 {
                     var vakarinis = new Studentas //sukuriamas objektas vakariniui studentui saugoti
                     {
-                        Id = xmlTextReader.GetAttribute("vardas"), //nuskaitomas <Vakarinis> elemento pozymis vardas
-                        Vardas = xmlTextReader.GetAttribute("id") //nuskaitomas <Vakarinis> elemento pozymis id
+                        Id = xmlTextReader.GetAttribute("id"), //nuskaitomas <Vakarinis> elemento pozymis id  
+                        Vardas = xmlTextReader.GetAttribute("vardas") //nuskaitomas <Vakarinis> elemento pozymis vardas
                     };
 
                     xmlTextReader.Read(); //atsiduriama ties <pazymiai> elemeto zyme
@@ -51,11 +51,11 @@ namespace XmlParser.Parser
                     xmlTextReader.Read(); //atsiduriama ties uzdaromoja <technologija> elemeto zyme
                     xmlTextReader.Read(); //atsiduriama ties uzdaromoja <pazymiai> elemeto zyme
                     vakarinis.Vidurkis = xmlTextReader.ReadElementString("vidurkis");
-                        //nuskaitoma <vidurkis> elemento reiksme 
+                    //nuskaitoma <vidurkis> elemento reiksme 
                     xmlTextReader.Read(); //atsiduriama ties </vakarinis> elemento pabaigos zyme
 
                     studentai.VakariniaiStudentai.Add(vakarinis);
-                        //itraukiamas nuskaitytas vakarinis studentas i sarasa 
+                    //itraukiamas nuskaitytas vakarinis studentas i sarasa 
                 }
 
                 if (xmlTextReader.Name == "Dieninis" && xmlTextReader.IsStartElement())
@@ -63,8 +63,8 @@ namespace XmlParser.Parser
                 {
                     var dieninis = new Studentas
                     {
-                        Id = xmlTextReader.GetAttribute("vardas"),
-                        Vardas = xmlTextReader.GetAttribute("id")
+                        Id = xmlTextReader.GetAttribute("id"),
+                        Vardas = xmlTextReader.GetAttribute("vardas")
                     };
 
                     xmlTextReader.Read(); //atsiduriama ties <pazymiai> elemento zyme
@@ -85,7 +85,7 @@ namespace XmlParser.Parser
                 }
             }
             studentai.Display(XmlParseMethod.XmlTextReader);
-                //metodas skirtas i konsoles langa atvaizduoti nuskaityta xml informacija
+            //metodas skirtas i konsoles langa atvaizduoti nuskaityta xml informacija
         }
     }
 }
