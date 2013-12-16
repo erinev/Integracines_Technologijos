@@ -1,5 +1,5 @@
 ﻿using System;
-using XmlParser.Parsers;
+using XmlParser.Parser;
 
 namespace XmlParser
 {

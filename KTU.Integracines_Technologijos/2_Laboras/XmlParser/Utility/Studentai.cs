@@ -1,22 +1,22 @@
 ﻿using System;
-using System.Collections;
+using System.Collections.Generic;
 using XmlParser.Model;
 
 namespace XmlParser.Utility
 {
     public class Studentai
     {
-        public readonly ArrayList VakariniaiStudentai = new ArrayList();
-        public readonly ArrayList DieniniaiStudentai = new ArrayList();
+        public readonly List<Studentas> VakariniaiStudentai = new List<Studentas>();
+        public readonly List<Studentas> DieniniaiStudentai = new List<Studentas>();
 
-        public void Display(int parserIndex)
+        public void Display(XmlParseMethod method)
         {
-            switch (parserIndex)
+            switch (method)
             {
-                case 1:
+                case XmlParseMethod.XmlTextReader:
                     Console.WriteLine("XmlTextReader results:");
                     break;
-                case 2:
+                case XmlParseMethod.XmlDocument:
                     Console.WriteLine("XmlDocument results:");
                     break;
                 default:
@@ -40,5 +40,11 @@ namespace XmlParser.Utility
 
             Console.WriteLine("");
         }
+    }
+
+    public enum XmlParseMethod
+    {
+        XmlTextReader = 1,
+        XmlDocument = 2
     }
 }
