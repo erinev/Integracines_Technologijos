@@ -11,10 +11,10 @@ namespace XmlParser
             var xd = new XmlDocument(); //sukuriamas XmlDocument objektas
             xd.Load(
                 "C:\\Users\\Erikas\\Documents\\GitHub\\Integracines_Technologijos\\KTU.Integracines_Technologijos\\2_Laboras\\XmlParser\\Uzduotis.xml");
-                //uzkraunamas XML failas
+            //uzkraunamas XML failas
 
             XmlNodeList vakariniaiNodeList = xd.SelectNodes("/studentai/Vakarinis");
-                // gaunam visus <vakarinis> elementus
+            // gaunam visus <vakarinis> elementus
 
             foreach (XmlNode node in vakariniaiNodeList) // kiekvienam <vakarinis> elementui
             {
@@ -24,17 +24,17 @@ namespace XmlParser
                 vakarinisStudentas.Vardas = node.Attributes.GetNamedItem("vardas").Value; //nuskaitom "Vardas" reikšmę
 
                 XmlNode matematikaSingleNode = node.SelectSingleNode("pazymiai/matematika");
-                    // gaunam <matematika> elementą
+                // gaunam <matematika> elementą
 
                 vakarinisStudentas.Paz1 = matematikaSingleNode.ChildNodes.Item(0).InnerText; //nuskaitome pirma pazymi
                 vakarinisStudentas.Paz2 = matematikaSingleNode.ChildNodes.Item(1).InnerText; //nuskaitome antrą pažymį
 
                 XmlNode technologijaSingleNode = node.SelectSingleNode("pazymiai/technologija");
-                    // gaunam <technologija> elementą
+                // gaunam <technologija> elementą
                 vakarinisStudentas.Paz11 = technologijaSingleNode.ChildNodes.Item(0).InnerText;
-                    //nuskaitome pirma pazymi
+                //nuskaitome pirma pazymi
                 vakarinisStudentas.Paz22 = technologijaSingleNode.ChildNodes.Item(1).InnerText;
-                    //nuskaitome antrą pažymį
+                //nuskaitome antrą pažymį
 
                 vakarinisStudentas.Vidurkis = node.ChildNodes.Item(1).InnerText; //gauname vidurkį
 
@@ -50,7 +50,7 @@ namespace XmlParser
                 dieninis.Vardas = node.Attributes.GetNamedItem("vardas").Value; //nuskaitom "Vardas" reikšmę
 
                 XmlNode matematikaSingleNode = node.SelectSingleNode("pazymiai/matematika");
-                    // gaunam <matematika> elementą
+                // gaunam <matematika> elementą
                 dieninis.Paz1 = matematikaSingleNode.ChildNodes.Item(0).InnerText; //nuskaitome pirma pazymi
                 dieninis.Paz2 = matematikaSingleNode.ChildNodes.Item(1).InnerText; //nuskaitome antra pazymi
 
