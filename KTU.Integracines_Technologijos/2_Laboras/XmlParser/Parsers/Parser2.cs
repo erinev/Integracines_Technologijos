@@ -1,6 +1,8 @@
 ﻿using System.Xml;
+using XmlParser.Model;
+using XmlParser.Utility;
 
-namespace XmlParser
+namespace XmlParser.Parsers
 {
     public class Parser2
     {
@@ -18,7 +20,7 @@ namespace XmlParser
 
             foreach (XmlNode node in vakariniaiNodeList) // kiekvienam <vakarinis> elementui
             {
-                var vakarinisStudentas = new Vakarinis(); //sukuriamas objektas studentų duomenų saugojimui
+                var vakarinisStudentas = new Studentas(); //sukuriamas objektas studentų duomenų saugojimui
 
                 vakarinisStudentas.Id = node.Attributes.GetNamedItem("id").Value; //nuskaitom "Id" reikšmę
                 vakarinisStudentas.Vardas = node.Attributes.GetNamedItem("vardas").Value; //nuskaitom "Vardas" reikšmę
@@ -45,7 +47,7 @@ namespace XmlParser
 
             foreach (XmlNode node in dieniniaiNodeList) // kiekvienam <dieninis> elementui
             {
-                var dieninis = new Dieninis();
+                var dieninis = new Studentas();
                 dieninis.Id = node.Attributes.GetNamedItem("id").Value; //nuskaitom "Id" reikšmę
                 dieninis.Vardas = node.Attributes.GetNamedItem("vardas").Value; //nuskaitom "Vardas" reikšmę
 

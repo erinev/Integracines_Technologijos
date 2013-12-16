@@ -39,21 +39,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSetInfo.cs" />
-    <Compile Include="DataSetStudentai.cs" />
-    <Compile Include="DataSetStudentas.cs" />
-    <Compile Include="Dieninis.cs" />
-    <Compile Include="Parser1.cs" />
-    <Compile Include="Parser2.cs" />
-    <Compile Include="Parser3.cs" />
+    <Compile Include="Utility\DataSetInfo.cs" />
+    <Compile Include="Utility\DataSetStudentai.cs" />
+    <Compile Include="Parsers\Parser1.cs" />
+    <Compile Include="Parsers\Parser2.cs" />
+    <Compile Include="Parsers\Parser3.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Studentai.cs" />
-    <Compile Include="Vakarinis.cs" />
+    <Compile Include="Utility\Studentai.cs" />
+    <Compile Include="Model\Studentas.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Uzduotis.xml" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

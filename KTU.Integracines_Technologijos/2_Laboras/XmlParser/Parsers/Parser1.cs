@@ -1,6 +1,8 @@
 ﻿using System.Xml;
+using XmlParser.Model;
+using XmlParser.Utility;
 
-namespace XmlParser
+namespace XmlParser.Parsers
 {
     public class Parser1
     {
@@ -31,52 +33,52 @@ namespace XmlParser
 
                 if (xmlTextReader.Name == "Vakarinis" && xmlTextReader.IsStartElement())
                 {
-                    var vakariniai = new Vakarinis //sukuriamas objektas vakariniams studentams saugoti
+                    var vakarinis = new Studentas //sukuriamas objektas vakariniams studentams saugoti
                     {
-                        Id = xmlTextReader.GetAttribute("Vardas"),
-                        Vardas = xmlTextReader.GetAttribute("Id")
+                        Id = xmlTextReader.GetAttribute("vardas"),
+                        Vardas = xmlTextReader.GetAttribute("id")
                     };
 
                     xmlTextReader.Read(); // atsiduriam ties <pazymiai> elemento žyme
                     xmlTextReader.Read(); // atsiduriam  ties <matematika>
                     xmlTextReader.Read(); //atsiduriam ties <paz1> elemento žyme
-                    vakariniai.Paz1 = xmlTextReader.ReadElementString("paz1"); //nuskaitom "paz1" reikšmę
-                    vakariniai.Paz2 = xmlTextReader.ReadElementString("paz2"); //nuskaitom "paz2" reikšmę
+                    vakarinis.Paz1 = xmlTextReader.ReadElementString("paz1"); //nuskaitom "paz1" reikšmę
+                    vakarinis.Paz2 = xmlTextReader.ReadElementString("paz2"); //nuskaitom "paz2" reikšmę
                     xmlTextReader.Read();
                     xmlTextReader.Read();
-                    vakariniai.Paz11 = xmlTextReader.ReadElementString("paz1"); //nuskaitom "paz1" reikšmę
-                    vakariniai.Paz22 = xmlTextReader.ReadElementString("paz2"); //nuskaitom "paz2" reikšmę
+                    vakarinis.Paz11 = xmlTextReader.ReadElementString("paz1"); //nuskaitom "paz1" reikšmę
+                    vakarinis.Paz22 = xmlTextReader.ReadElementString("paz2"); //nuskaitom "paz2" reikšmę
                     xmlTextReader.Read();
                     xmlTextReader.Read();
-                    vakariniai.Vidurkis = xmlTextReader.ReadElementString("vidurkis"); // nuskaitom  reikšmę 
+                    vakarinis.Vidurkis = xmlTextReader.ReadElementString("vidurkis"); // nuskaitom  reikšmę 
 
-                    studentai.VakariniaiStudentai.Add(vakariniai); // įtraukiam studento objektą į studentai objektą 
+                    studentai.VakariniaiStudentai.Add(vakarinis); // įtraukiam studento objektą į studentai objektą 
                     xmlTextReader.Read();
                     // dabar ties </vakarinis> elemento pabaigos žyme
                 }
 
                 if (xmlTextReader.Name == "Dieninis" && xmlTextReader.IsStartElement())
                 {
-                    var dieniniai = new Dieninis //sukuriamas objektas studentų duomenų saugojimui
+                    var dieninis = new Studentas() //sukuriamas objektas studentų duomenų saugojimui
                     {
-                        Id = xmlTextReader.GetAttribute("Vardas"),
-                        Vardas = xmlTextReader.GetAttribute("Id")
+                        Id = xmlTextReader.GetAttribute("vardas"),
+                        Vardas = xmlTextReader.GetAttribute("id")
                     };
 
                     xmlTextReader.Read(); // atsiduriam ties <pazymiai> elemento žyme
                     xmlTextReader.Read(); // atsiduriam  ties <matematika>
                     xmlTextReader.Read(); //atsiduriam ties <paz1> elemento žyme
-                    dieniniai.Paz1 = xmlTextReader.ReadElementString("paz1"); //nuskaitom "paz1" reikšmę
-                    dieniniai.Paz2 = xmlTextReader.ReadElementString("paz2"); //nuskaitom "paz2" reikšmę
+                    dieninis.Paz1 = xmlTextReader.ReadElementString("paz1"); //nuskaitom "paz1" reikšmę
+                    dieninis.Paz2 = xmlTextReader.ReadElementString("paz2"); //nuskaitom "paz2" reikšmę
                     xmlTextReader.Read(); // atsiduriam  ties <technologija>
                     xmlTextReader.Read(); //atsiduriam ties <paz1> elemento žyme
-                    dieniniai.Paz11 = xmlTextReader.ReadElementString("paz1"); //nuskaitom "paz1" reikšmę
-                    dieniniai.Paz22 = xmlTextReader.ReadElementString("paz2"); //nuskaitom "paz2" reikšmę
+                    dieninis.Paz11 = xmlTextReader.ReadElementString("paz1"); //nuskaitom "paz1" reikšmę
+                    dieninis.Paz22 = xmlTextReader.ReadElementString("paz2"); //nuskaitom "paz2" reikšmę
                     xmlTextReader.Read(); // atsiduriam ties <vidurkis> elemento žyme
                     xmlTextReader.Read();
-                    dieniniai.Vidurkis = xmlTextReader.ReadElementString("vidurkis"); // nuskaitom "vidurkis" reikšmę 
+                    dieninis.Vidurkis = xmlTextReader.ReadElementString("vidurkis"); // nuskaitom "vidurkis" reikšmę 
                     // dabar ties </studentas> elemento pabaigos žyme
-                    studentai.DieniniaiStudentai.Add(dieniniai); // įtraukiam studento objektą į studentai objektą 
+                    studentai.DieniniaiStudentai.Add(dieninis); // įtraukiam studento objektą į studentai objektą 
                     xmlTextReader.Read();
                     // dabar ties </Dieninis> elemento žyme  
                 }

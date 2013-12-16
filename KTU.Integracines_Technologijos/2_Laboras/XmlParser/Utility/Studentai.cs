@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections;
+using XmlParser.Model;
 
-namespace XmlParser
+namespace XmlParser.Utility
 {
     public class Studentai
     {
@@ -23,14 +24,14 @@ namespace XmlParser
                     break;
             }
 
-            foreach (Vakarinis studentas in VakariniaiStudentai)
+            foreach (Studentas studentas in VakariniaiStudentai)
             {
                 Console.Write("{0} {1} {2} ", studentas.Id, studentas.Vardas, studentas.Paz1);
                 Console.WriteLine("{0} {1} {2} {3}", studentas.Paz2, studentas.Paz11, studentas.Paz22,
                     studentas.Vidurkis);
             }
 
-            foreach (Dieninis studentas in DieniniaiStudentai)
+            foreach (Studentas studentas in DieniniaiStudentai)
             {
                 Console.Write("{0} {1} {2} ", studentas.Id, studentas.Vardas, studentas.Paz1);
                 Console.WriteLine("{0} {1} {2} {3}", studentas.Paz2, studentas.Paz11, studentas.Paz22,

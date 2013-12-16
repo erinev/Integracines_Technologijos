@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 
-namespace XmlParser
+namespace XmlParser.Utility
 {
     public static class DataSetInfo
     {

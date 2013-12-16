@@ -1,6 +1,6 @@
-﻿namespace XmlParser
+﻿namespace XmlParser.Model
 {
-    public class Dieninis
+    public class Studentas
     {
         public string Id;
         public string Vardas;
