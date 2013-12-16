@@ -126,6 +126,48 @@ namespace ErikoWebServisas
         }
 
         [WebMethod]
+        public DataTable GautiDuomenisApieStudijuPlanaPagalPaskaitosPavadinima(string pavadinimas)
+        {
+            string connectionString =
+                ConfigurationManager.ConnectionStrings["Integracines_TechnologijosConnectionString"].ConnectionString;
+
+            DataTable table = CreateEmptyDataTable();
+
+            using (var conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                SqlCommand cmd = conn.CreateCommand();
+                cmd.CommandText =
+                    "SELECT Paskaitos.Pavadinimas, Studiju_planas.Diena, Studiju_planas.Laikas, Studentai.Vardas, Studentai.Pavarde " +
+                    "FROM Paskaitos " +
+                    "INNER JOIN Studiju_planas " +
+                    "ON Paskaitos.Kodas = Studiju_planas.Paskaitos_kodas " +
+                    "INNER JOIN Studentai " +
+                    "ON Studiju_planas.ID_Studentas = Studentai.ID_Studentas " +
+                    "WHERE Paskaitos.Pavadinimas = @Pavadinimas";
+                cmd.Parameters.AddWithValue("@Pavadinimas", pavadinimas);
+
+                using (SqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        DataRow row = table.NewRow();
+
+                        row["Pavadinimas"] = reader["Pavadinimas"].ToString();
+                        row["Diena"] = reader["Diena"].ToString();
+                        row["Laikas"] = reader["Laikas"].ToString();
+                        row["Vardas"] = reader["Vardas"].ToString();
+                        row["Pavarde"] = reader["Pavarde"].ToString();
+
+                        table.Rows.Add(row);
+                    }
+                }
+            }
+
+            return table;
+        }
+
+        [WebMethod]
         public string GautiPaskaitaPagalLaikaIrStudentoId(string diena, string laikas, string studentoId)
         {
             string paskaitosPavadinimas = _studijuPlanasTableAdapter.GautiPaskaitaPagalLaikaIrStudentoID(diena, laikas,

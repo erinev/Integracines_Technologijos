@@ -243,6 +243,15 @@ namespace WebServisoClientas
                 ComboBoxStudentas.Visible = true;
                 FillGridView();
             }
+            else if (e.TabPage == TabPageGynimas)
+            {
+                LabelPriskirtiPaskaita.Visible = false;
+                ComboBoxPaskaita.Visible = false;
+                LabelPriskirtiStudentai.Visible = false;
+                ComboBoxStudentas.Visible = false;
+                FillGridView();
+                GridViewResult.DataSource = new DataTable();
+            }
             else
             {
                 LabelPriskirtiPaskaita.Visible = false;
@@ -251,6 +260,13 @@ namespace WebServisoClientas
                 ComboBoxStudentas.Visible = false;
                 FillGridView();
             }
+        }
+
+        private void ButtonGynimas_Click(object sender, EventArgs e)
+        {
+            string pavadinimas = TextBoxGynimasPavadinimas.Text;
+            DataTable result = _soapClient.GautiDuomenisApieStudijuPlanaPagalPaskaitosPavadinima(pavadinimas);
+            GridViewResult.DataSource = result;
         }
     }
 }

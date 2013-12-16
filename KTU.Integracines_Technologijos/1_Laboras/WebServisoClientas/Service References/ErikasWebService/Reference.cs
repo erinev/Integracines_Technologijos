@@ -36,6 +36,10 @@ namespace WebServisoClientas.ErikasWebService {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Data.DataTable GautiDuomenisApieStudijuPlana();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://ktu.lt/GautiDuomenisApieStudijuPlanaPagalPaskaitosPavadinima", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataTable GautiDuomenisApieStudijuPlanaPagalPaskaitosPavadinima(string pavadinimas);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://ktu.lt/GautiPaskaitaPagalLaikaIrStudentoId", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         string GautiPaskaitaPagalLaikaIrStudentoId(string diena, string laikas, string studentoId);
@@ -94,6 +98,10 @@ namespace WebServisoClientas.ErikasWebService {
         
         public System.Data.DataTable GautiDuomenisApieStudijuPlana() {
             return base.Channel.GautiDuomenisApieStudijuPlana();
+        }
+        
+        public System.Data.DataTable GautiDuomenisApieStudijuPlanaPagalPaskaitosPavadinima(string pavadinimas) {
+            return base.Channel.GautiDuomenisApieStudijuPlanaPagalPaskaitosPavadinima(pavadinimas);
         }
         
         public string GautiPaskaitaPagalLaikaIrStudentoId(string diena, string laikas, string studentoId) {

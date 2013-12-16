@@ -83,6 +83,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="GautiDuomenisApieStudijuPlanaPagalPaskaitosPavadinima">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pavadinimas" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GautiDuomenisApieStudijuPlanaPagalPaskaitosPavadinimaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GautiDuomenisApieStudijuPlanaPagalPaskaitosPavadinimaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="GautiPaskaitaPagalLaikaIrStudentoId">
         <s:complexType>
           <s:sequence>
@@ -163,6 +184,12 @@
   <wsdl:message name="GautiDuomenisApieStudijuPlanaSoapOut">
     <wsdl:part name="parameters" element="tns:GautiDuomenisApieStudijuPlanaResponse" />
   </wsdl:message>
+  <wsdl:message name="GautiDuomenisApieStudijuPlanaPagalPaskaitosPavadinimaSoapIn">
+    <wsdl:part name="parameters" element="tns:GautiDuomenisApieStudijuPlanaPagalPaskaitosPavadinima" />
+  </wsdl:message>
+  <wsdl:message name="GautiDuomenisApieStudijuPlanaPagalPaskaitosPavadinimaSoapOut">
+    <wsdl:part name="parameters" element="tns:GautiDuomenisApieStudijuPlanaPagalPaskaitosPavadinimaResponse" />
+  </wsdl:message>
   <wsdl:message name="GautiPaskaitaPagalLaikaIrStudentoIdSoapIn">
     <wsdl:part name="parameters" element="tns:GautiPaskaitaPagalLaikaIrStudentoId" />
   </wsdl:message>
@@ -201,6 +228,10 @@
     <wsdl:operation name="GautiDuomenisApieStudijuPlana">
       <wsdl:input message="tns:GautiDuomenisApieStudijuPlanaSoapIn" />
       <wsdl:output message="tns:GautiDuomenisApieStudijuPlanaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GautiDuomenisApieStudijuPlanaPagalPaskaitosPavadinima">
+      <wsdl:input message="tns:GautiDuomenisApieStudijuPlanaPagalPaskaitosPavadinimaSoapIn" />
+      <wsdl:output message="tns:GautiDuomenisApieStudijuPlanaPagalPaskaitosPavadinimaSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="GautiPaskaitaPagalLaikaIrStudentoId">
       <wsdl:input message="tns:GautiPaskaitaPagalLaikaIrStudentoIdSoapIn" />
@@ -255,6 +286,15 @@
     </wsdl:operation>
     <wsdl:operation name="GautiDuomenisApieStudijuPlana">
       <soap:operation soapAction="http://ktu.lt/GautiDuomenisApieStudijuPlana" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GautiDuomenisApieStudijuPlanaPagalPaskaitosPavadinima">
+      <soap:operation soapAction="http://ktu.lt/GautiDuomenisApieStudijuPlanaPagalPaskaitosPavadinima" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -330,6 +370,15 @@
     </wsdl:operation>
     <wsdl:operation name="GautiDuomenisApieStudijuPlana">
       <soap12:operation soapAction="http://ktu.lt/GautiDuomenisApieStudijuPlana" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GautiDuomenisApieStudijuPlanaPagalPaskaitosPavadinima">
+      <soap12:operation soapAction="http://ktu.lt/GautiDuomenisApieStudijuPlanaPagalPaskaitosPavadinima" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

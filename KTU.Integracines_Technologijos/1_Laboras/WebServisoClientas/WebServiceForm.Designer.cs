@@ -62,6 +62,10 @@
             this.LabelPriskirtiStudentai = new System.Windows.Forms.Label();
             this.LabelPriskirtiPaskaita = new System.Windows.Forms.Label();
             this.ComboBoxPaskaita = new System.Windows.Forms.ComboBox();
+            this.TabPageGynimas = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
+            this.TextBoxGynimasPavadinimas = new System.Windows.Forms.TextBox();
+            this.ButtonGynimas = new System.Windows.Forms.Button();
             this.TabControl.SuspendLayout();
             this.InsertTab.SuspendLayout();
             this.AssignTab.SuspendLayout();
@@ -70,6 +74,7 @@
             this.DeleteTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewResult)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).BeginInit();
+            this.TabPageGynimas.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabControl
@@ -79,6 +84,7 @@
             this.TabControl.Controls.Add(this.SelectTab);
             this.TabControl.Controls.Add(this.UpdateTab);
             this.TabControl.Controls.Add(this.DeleteTab);
+            this.TabControl.Controls.Add(this.TabPageGynimas);
             this.TabControl.Location = new System.Drawing.Point(12, 12);
             this.TabControl.Name = "TabControl";
             this.TabControl.SelectedIndex = 0;
@@ -427,6 +433,45 @@
             this.ComboBoxPaskaita.TabIndex = 3;
             this.ComboBoxPaskaita.Visible = false;
             // 
+            // TabPageGynimas
+            // 
+            this.TabPageGynimas.Controls.Add(this.ButtonGynimas);
+            this.TabPageGynimas.Controls.Add(this.TextBoxGynimasPavadinimas);
+            this.TabPageGynimas.Controls.Add(this.label8);
+            this.TabPageGynimas.Location = new System.Drawing.Point(4, 22);
+            this.TabPageGynimas.Name = "TabPageGynimas";
+            this.TabPageGynimas.Padding = new System.Windows.Forms.Padding(3);
+            this.TabPageGynimas.Size = new System.Drawing.Size(443, 162);
+            this.TabPageGynimas.TabIndex = 5;
+            this.TabPageGynimas.Text = "Gynimas";
+            this.TabPageGynimas.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(113, 53);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(70, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Pavadinimas:";
+            // 
+            // TextBoxGynimasPavadinimas
+            // 
+            this.TextBoxGynimasPavadinimas.Location = new System.Drawing.Point(190, 45);
+            this.TextBoxGynimasPavadinimas.Name = "TextBoxGynimasPavadinimas";
+            this.TextBoxGynimasPavadinimas.Size = new System.Drawing.Size(166, 20);
+            this.TextBoxGynimasPavadinimas.TabIndex = 1;
+            // 
+            // ButtonGynimas
+            // 
+            this.ButtonGynimas.Location = new System.Drawing.Point(153, 85);
+            this.ButtonGynimas.Name = "ButtonGynimas";
+            this.ButtonGynimas.Size = new System.Drawing.Size(75, 23);
+            this.ButtonGynimas.TabIndex = 2;
+            this.ButtonGynimas.Text = "Rasti";
+            this.ButtonGynimas.UseVisualStyleBackColor = true;
+            this.ButtonGynimas.Click += new System.EventHandler(this.ButtonGynimas_Click);
+            // 
             // WebServiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -456,6 +501,8 @@
             this.DeleteTab.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridViewResult)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ErrorProvider)).EndInit();
+            this.TabPageGynimas.ResumeLayout(false);
+            this.TabPageGynimas.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -496,6 +543,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button ButtonIstrinti;
+        private System.Windows.Forms.TabPage TabPageGynimas;
+        private System.Windows.Forms.TextBox TextBoxGynimasPavadinimas;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button ButtonGynimas;
     }
 }
 
