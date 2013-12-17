@@ -11,8 +11,8 @@ namespace XmlParser
             var xmlDocumentParser = new Parser2();
             var xmlDataSetParser = new Parser3();
 
-            xmlTextReaderParser.ReadXmlUsingXmlTextReader();
-            xmlDocumentParser.ParseXmlUsingXmlDocument();
+            //xmlTextReaderParser.ReadXmlUsingXmlTextReader();
+            //xmlDocumentParser.ParseXmlUsingXmlDocument();
             xmlDataSetParser.ParseXmlUsingDataSet();
 
             Console.ReadLine();
